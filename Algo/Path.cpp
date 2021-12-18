@@ -12,3 +12,19 @@ bool Path::containsNode(SatelliteNode &sn) const {
     return false;
 
 }
+
+std::string Path::ProxyEdgeToStr(ProxyEdge const&e) {
+    std::stringstream buffer;
+    buffer << e.getEdge()->destination->name.c_str();
+    buffer << e.getStart();
+    buffer << e.getEnd();
+    return buffer.str();
+}
+
+std::ostream &operator<<(std::ostream &os, const Path &p) {
+    for(auto& pe: p.path){
+        os << Path::ProxyEdgeToStr(pe);
+    }
+    return os;
+
+}

@@ -7,6 +7,7 @@
 
 
 #include <string>
+#include <sstream>
 #include "../SatData/Edge.h"
 
 class ProxyEdge {
@@ -20,10 +21,10 @@ public:
     SatelliteNode* getEndNode() {
         return edge->destination;
     }
-    double getStart(){
+    [[nodiscard]] double getStart() const{
         return edge->getStart()+start;
     }
-    double getEnd(){
+    [[nodiscard]] double getEnd() const{
         return edge->getEnd()-end;
     }
 
@@ -39,6 +40,9 @@ public:
     [[nodiscard]] Edge const* getEdge() const{
         return edge;
     }
+
+
+
 
 };
 

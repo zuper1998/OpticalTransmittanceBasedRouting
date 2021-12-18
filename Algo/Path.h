@@ -22,11 +22,11 @@ public:
     }
 
     void addEdge(ProxyEdge pe) {path.push_back(pe);}
-    ProxyEdge getLastEdge(){
+    ProxyEdge getLastEdge() const{
         return path.back();
     }
 
-    bool isViable(Edge const&edge) {
+    bool isViable(Edge const&edge) const {
         if((edge.getStart()- path[0].getEnd())>constants::max_time_delta){
             return false;
         } else if(!containsNode(*edge.destination)) {
@@ -36,10 +36,30 @@ public:
         return false;
 
     }
+    bool operator<(Path const& outer){
+        for(int i = 0; i< std::min(path.size(),outer.path.size());i++){
+            if(ProxyEdgeToStr(path[i])< ProxyEdgeToStr(outer.path[i]))
+                return true;
+            if(ProxyEdgeToStr(path[i])== ProxyEdgeToStr(outer.path[i]))
+                continue;
+            else{return false;}
+        }
+    }
+
+    bool operator==(Path const&outer){
+        for(int i = 0; i< std::min(path.size(),outer.path.size());i++) {
+            if (ProxyEdgeToStr(path[i]) != ProxyEdgeToStr(outer.path[i]))
+                return false;
+        }
+        return true;
+    }
 
     bool containsNode(SatelliteNode& sn) const;
 
-};
 
+    friend std::ostream& operator<<(std::ostream& os, const Path& p);
+
+    static std::string ProxyEdgeToStr(const ProxyEdge &e);
+};
 
 #endif //OPTICALTRANSMITTANCEBASEDROUTING_PATH_H

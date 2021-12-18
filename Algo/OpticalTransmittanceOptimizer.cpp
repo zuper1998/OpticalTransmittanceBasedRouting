@@ -2,6 +2,7 @@
 // Created by narcano on 2021. 12. 14..
 //
 
+#include <iostream>
 #include "OpticalTransmittanceOptimizer.h"
 
 std::vector<Path>  OpticalTransmittanceOptimizer::BFS(SatelliteNode const& start, SatelliteNode const &end) {
@@ -29,8 +30,22 @@ std::vector<Path>  OpticalTransmittanceOptimizer::BFS(SatelliteNode const& start
                 }
             }
         }
+        CullPaths(tmp_paths);
         paths.clear();
-        std::for_each(tmp_paths.begin(), tmp_paths.end(), [&paths](auto const &path) { paths.push_back(path); });
+        for(int i = 0;i<tmp_paths.size();i++){
+            if(i==tmp_paths.size()-1){
+                paths.emplace_back(tmp_paths[i]);
+            } else {
+                if(tmp_paths[i].get()==tmp_paths[i+1].get()) {
+                    printf("EQQUAL");
+                    continue;
+                }
+                paths.emplace_back(tmp_paths[i]);
+            }
+
+        }
+
+        printf("%u | %u\n", tmp_paths.size() ,paths.size());
         tmp_paths.clear();
         if (paths.empty()) break;
     }
@@ -63,4 +78,19 @@ void OpticalTransmittanceOptimizer::optimizePath(Path p) {
     for(int i =0;i<p.path.size()-1;i++){
         optimize(p.path[i],p.path[i+1]);
     }
+}
+
+
+
+
+
+void OpticalTransmittanceOptimizer::CullPaths(std::vector<std::shared_ptr<Path>> vector1) {
+    std::sort(std::begin(vector1),std::end(vector1), [](const std::shared_ptr<Path>& p1, const std::shared_ptr<Path>&  p2){
+        return *p1<*p2;
+    });
+    /*
+    std::for_each(vector1.begin(), vector1.end(), [](const std::shared_ptr<Path>& p1){
+        std::cout << *p1 << std::endl;
+    });
+    */
 }

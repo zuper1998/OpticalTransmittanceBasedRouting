@@ -15,7 +15,7 @@ std::vector<Path>  OpticalTransmittanceOptimizer::BFS(SatelliteNode const& start
     }
     int count = 0;
     while (true) {
-        //if(count ==8) return good_paths;
+        if(count ==8) return good_paths;
         printf("%d  %d  %d \n", count++, paths.size(), good_paths.size());
         for (auto const &path: paths) {
             for (auto const&edge: path->getLastEdge().getEndNode()->edges) {
@@ -30,22 +30,8 @@ std::vector<Path>  OpticalTransmittanceOptimizer::BFS(SatelliteNode const& start
                 }
             }
         }
-        CullPaths(tmp_paths);
         paths.clear();
-        for(int i = 0;i<tmp_paths.size();i++){
-            if(i==tmp_paths.size()-1){
-                paths.emplace_back(tmp_paths[i]);
-            } else {
-                if(tmp_paths[i].get()==tmp_paths[i+1].get()) {
-                    printf("EQQUAL");
-                    continue;
-                }
-                paths.emplace_back(tmp_paths[i]);
-            }
-
-        }
-
-        printf("%u | %u\n", tmp_paths.size() ,paths.size());
+        std::for_each(tmp_paths.begin(), tmp_paths.end(), [&paths](auto const &path) { paths.push_back(path); });
         tmp_paths.clear();
         if (paths.empty()) break;
     }

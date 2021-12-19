@@ -4,6 +4,7 @@
 
 
 #include <sstream>
+#include <chrono>
 #include "Network.h"
 
 void Network::addSatellite(const SatelliteNode &sat) {
@@ -19,13 +20,15 @@ std::string EdgeToStr(Edge const&e) {
 }
 
 void Network::generateBest() {
+    auto start = std::chrono::system_clock::now();
+
     auto paths = OpticalTransmittanceOptimizer::BFS(satellites[17], satellites.back());
 
     std::unordered_map<std::string, double> edges_best;
 
 
     for (auto &edge: satellites[17].edges) {
-        printf("%s\n",EdgeToStr(edge).c_str());
+        //printf("%s\n",EdgeToStr(edge).c_str());
         edges_best.try_emplace(EdgeToStr(edge).c_str(), 0);
     }
 
@@ -43,5 +46,10 @@ void Network::generateBest() {
        printf("%s: %f\n", EdgeToStr(edge).c_str() , edges_best[EdgeToStr(edge)]);
     }
 
+    auto end = std::chrono::system_clock::now();
+    std::time_t endtime = std::chrono::system_clock::to_time_t(end);
+    std::chrono::duration<double> elapsed_seconds = end-start;
+    std::cout << "finished computation at " << std::ctime(&endtime)
+              << "elapsed time: " << elapsed_seconds.count() << "s\n";
 
 }

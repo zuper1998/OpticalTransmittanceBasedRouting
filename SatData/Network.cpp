@@ -32,9 +32,11 @@ void Network::generateBest() {
         edges_best.try_emplace(EdgeToStr(edge).c_str(), 0);
     }
 
-
-    for (auto p_ptr: paths) {
-        OpticalTransmittanceOptimizer::optimizePath(p_ptr);
+    double cnt = 0;
+    for (auto const&p_ptr: paths) {
+        double progress = cnt++/(double )paths.size() ;
+        std::cout << progress << " | " << paths.size() << "                               \r" << std::flush;
+        //OpticalTransmittanceOptimizer::optimizePath(p_ptr);
         double val = OpticalTransmittanceOptimizer::calculatePathOpticalThroughput(p_ptr);
         std::string pathEdge = EdgeToStr(*p_ptr.path[0].getEdge());
         if (edges_best[pathEdge] < val) {

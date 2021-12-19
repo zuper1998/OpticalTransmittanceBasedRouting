@@ -18,7 +18,7 @@ class ProxyEdge {
 public:
     ProxyEdge(Edge const* _edge,int _start,int _end): edge(_edge), start(_start), end(_end)  {}
 
-    SatelliteNode* getEndNode() {
+    [[nodiscard]] SatelliteNode * getEndNode() const {
         return edge->destination;
     }
     [[nodiscard]] double getStart() const{
@@ -28,7 +28,7 @@ public:
         return edge->getEnd()-end;
     }
 
-    double getOverallTransmittanceTroughput() {
+    [[nodiscard]] double getOverallTransmittanceTroughput() const{
         return edge->getTransmittanceBetween(start,end);
     }
     void removeFromStart(){
@@ -37,13 +37,21 @@ public:
     void removeFromEnd(){
         end++;
     }
+
+    void removeFromEnd(int d){
+        end+=d;
+    }
+    void removeFromStart(int d){
+        start+=d;
+    }
     [[nodiscard]] Edge const* getEdge() const{
         return edge;
     }
 
 
-
-
+    [[nodiscard]] double getOverallTransmittanceTroughputUntil(double d) const {
+        return edge->getTransmittanceBetweenUntil(start,end,d);
+    }
 };
 
 

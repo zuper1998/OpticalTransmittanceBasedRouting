@@ -10,7 +10,6 @@
 #include "ProxyEdge.h"
 #include "../Algo/Constants.h"
 #include "../SatData/SatelliteNode.h"
-
 class Path {
 public:
     std::vector<ProxyEdge> path;
@@ -21,16 +20,20 @@ public:
         std::for_each(p.path.begin(), p.path.end(), [this](ProxyEdge const& pe){this->path.push_back(pe);});
     }
 
-    void addEdge(ProxyEdge pe) {path.push_back(pe);}
-    ProxyEdge getLastEdge() const{
+
+
+    void addEdge(ProxyEdge pe) {
+        path.push_back(pe);
+    }
+    ProxyEdge const& getLastEdge() const{
         return path.back();
     }
 
     bool isViable(Edge const&edge) const {
-        if((edge.getStart()- path[0].getEnd())>constants::max_time_delta){
+        if((edge.getStart() - path[0].getEnd())>constants::max_time_delta){
             return false;
         } else if(!containsNode(*edge.destination)) {
-            return ((edge.getEnd()-getLastEdge().getStart())>0);
+            return (edge.getEnd() > getLastEdge().getStart());
         }
 
         return false;
@@ -44,6 +47,7 @@ public:
                 continue;
             else{return false;}
         }
+        return false;
     }
 
     bool operator==(Path const&outer){

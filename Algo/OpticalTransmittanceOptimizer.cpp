@@ -13,25 +13,21 @@ std::vector<Path>  OpticalTransmittanceOptimizer::BFS(SatelliteNode const& start
     for (auto const& startEdge: start.edges) {
         paths.push_back(std::make_shared<Path>(ProxyEdge(&startEdge, 0, 0)));
     }
+    std::printf("Path: %lu, ProxyEdge: %lu Edge %lu\n",sizeof(Path),sizeof(ProxyEdge),sizeof(Edge));
     int count = 0;
     while (true) {
-        if(count ==8) return good_paths;
-        printf("%d  %d  %d \n", count++, paths.size(), good_paths.size());
+        printf("%d  %zu  %zu \n", ++count, paths.size(), good_paths.size());
+        if(count ==6) {return good_paths;};
         for (auto const &path: paths) {
             for (auto const&edge: path->getLastEdge().getEndNode()->edges) {
                 if (path->isViable(edge)) {
-                    auto path1 = std::make_shared<Path>(*path);
-                    path1->addEdge(ProxyEdge(&edge, 0 ,0));
-                    if ((*edge.destination) == end) {
-                        good_paths.push_back(*path1);
-                    } else {
-                        tmp_paths.push_back(path1);
-                    }
+                    Pathing(end, tmp_paths, good_paths, path, edge);
                 }
             }
         }
+        //printf("TMPPATH %lu\n",sizeof( Path)*tmp_paths.size());
         paths.clear();
-        std::for_each(tmp_paths.begin(), tmp_paths.end(), [&paths](auto const &path) { paths.push_back(path); });
+        paths.insert(std::end(paths),std::begin(tmp_paths),std::end(tmp_paths));
         tmp_paths.clear();
         if (paths.empty()) break;
     }
@@ -40,43 +36,64 @@ std::vector<Path>  OpticalTransmittanceOptimizer::BFS(SatelliteNode const& start
 
 }
 
+void
+OpticalTransmittanceOptimizer::Pathing(const SatelliteNode &end, std::vector<std::shared_ptr<Path>> &tmp_paths,
+                                       std::vector<Path> &good_paths, const std::shared_ptr<Path> &path,
+                                       const Edge &edge) {
+    auto path1 = std::make_shared<Path>(*path);
+    path1->addEdge(ProxyEdge(&edge, 0 ,0));
 
 
-double OpticalTransmittanceOptimizer::calculatePathOpticalThroughput(Path p) {
+
+    if ((*edge.destination) == end) {//this can be expanded by making it clip to every end node that is desired
+        good_paths.emplace_back(optimizePath(*path1));
+    } else {
+        tmp_paths.emplace_back(std::move(path1));
+    }
+}
+
+
+double OpticalTransmittanceOptimizer::calculatePathOpticalThroughput(Path const & p) {
     double out=p.path[0].getOverallTransmittanceTroughput();
-    std::for_each(p.path.begin(), p.path.end(), [&](ProxyEdge& edge){
-        out= std::min(edge.getOverallTransmittanceTroughput(),out);
+    std::for_each(p.path.begin(), p.path.end(), [&](ProxyEdge const& edge) {
+        out= edge.getOverallTransmittanceTroughputUntil(out);
     });
     return out;
 }
-
+//Paprion van rata az algo
 void OpticalTransmittanceOptimizer::optimize(ProxyEdge &edge, ProxyEdge &edge1) {
-    while((edge.getEnd() - edge1.getStart())>0) {  //overlap amount
+    double t1 = edge.getStart();
+    double t2 = edge.getEnd();
+    //Masik
+    double t3 = edge.getStart();
+    double t4 = edge.getEnd();
+
+    if(t4<t2){ // III. eset
+        edge.removeFromEnd((int)(t2-t4));
+    } else if(t3<t1) { // IV. es V eset
+        edge.removeFromEnd((int)(t1-t3));
+    }
+
+}
+
+/*
+  double delta = edge.getEnd() - edge1.getStart();
+    while(delta-->0) {  //overlap amount
         if(edge.getOverallTransmittanceTroughput() < edge1.getOverallTransmittanceTroughput()){
             edge1.removeFromStart();
         } else {
             edge.removeFromEnd();
         }
     }
-}
-
-void OpticalTransmittanceOptimizer::optimizePath(Path p) {
+*/
+ Path& OpticalTransmittanceOptimizer::optimizePath(Path & p) {
     for(int i =0;i<p.path.size()-1;i++){
         optimize(p.path[i],p.path[i+1]);
     }
+    return p;
 }
 
 
 
 
 
-void OpticalTransmittanceOptimizer::CullPaths(std::vector<std::shared_ptr<Path>> vector1) {
-    std::sort(std::begin(vector1),std::end(vector1), [](const std::shared_ptr<Path>& p1, const std::shared_ptr<Path>&  p2){
-        return *p1<*p2;
-    });
-    /*
-    std::for_each(vector1.begin(), vector1.end(), [](const std::shared_ptr<Path>& p1){
-        std::cout << *p1 << std::endl;
-    });
-    */
-}

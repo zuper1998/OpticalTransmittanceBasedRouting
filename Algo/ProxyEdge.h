@@ -48,6 +48,9 @@ public:
         return edge;
     }
 
+    [[nodiscard]] double getDuration()const{
+        return getEnd()-getStart();
+    }
 
     [[nodiscard]] double getOverallTransmittanceTroughputUntil(double d) const {
         return edge->getTransmittanceBetweenUntil(start,end,d);

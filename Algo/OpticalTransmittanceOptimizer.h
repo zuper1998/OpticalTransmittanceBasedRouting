@@ -13,7 +13,7 @@
 
 class OpticalTransmittanceOptimizer {
 public:
-    static void optimize(ProxyEdge &edge, ProxyEdge &edge1);
+    static bool optimize(ProxyEdge &edge, ProxyEdge &edge1);
 
     static std::vector<Path> BFS(const SatelliteNode &start, const SatelliteNode &end);
 
@@ -24,7 +24,9 @@ public:
             const std::shared_ptr<Path> &path, const Edge &edge);
 
 
-    static Path& optimizePath(Path &p);
+    static bool optimizePath(Path &p);
+
+    static bool cutInShape(Path &path);
 };
 
 

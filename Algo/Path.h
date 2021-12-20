@@ -30,7 +30,7 @@ public:
     }
 
     bool isViable(Edge const&edge) const {
-        if((edge.getStart() - path[0].getEnd())>constants::max_time_delta){
+        if((edge.getStart() - path[0].getEnd())>(constants::max_time_delta-constants::min_time_delta)){
             return false;
         } else if(!containsNode(*edge.destination)) {
             return (edge.getEnd() > getLastEdge().getStart());

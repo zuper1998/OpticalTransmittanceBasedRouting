@@ -3,7 +3,7 @@
 
 int main() {
     auto loader = LoadSat();
-    Network network = loader.LoadFromFile("/home/narcano/CLionProjects/OpticalTransmittanceBasedRouting/QSAT_RETRO_LOWMID2.satNetwork");
+    Network network = loader.LoadFromFile("/home/narcano/CLionProjects/OpticalTransmittanceBasedRouting/QSAT_RETRO_LOW.satNetwork");
     network.generateBest();
     return 0;
 }

@@ -7,6 +7,7 @@
 namespace constants{
   const  double max_time_delta = 3600;
   const  double entangledPhotonDetectionRateHz = 3.51*1000;
+  const double min_time_delta = 100;
 
 };
 #endif //OPTICALTRANSMITTANCEBASEDROUTING_CONSTANTS_H

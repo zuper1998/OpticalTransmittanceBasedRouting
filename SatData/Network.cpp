@@ -37,16 +37,19 @@ void Network::generateBest() {
         double progress = cnt++/(double )paths.size() ;
         std::cout << progress << " | " << paths.size() << "                               \r" << std::flush;
         //OpticalTransmittanceOptimizer::optimizePath(p_ptr);
-        double val = OpticalTransmittanceOptimizer::calculatePathOpticalThroughput(p_ptr);
+        double val = OpticalTransmittanceOptimizer::calculatePathOpticalThroughput(p_ptr) * constants::entangledPhotonDetectionRateHz;
         std::string pathEdge = EdgeToStr(*p_ptr.path[0].getEdge());
         if (edges_best[pathEdge] < val) {
             edges_best[pathEdge] = val;
         }
     }
-
+    double sum = 0;
     for (auto &edge: satellites[17].edges) {
+        sum+=edges_best[EdgeToStr(edge)];
        printf("%s: %f\n", EdgeToStr(edge).c_str() , edges_best[EdgeToStr(edge)]);
     }
+    printf("For the path between %s and %s avarage bitrate was %f\n",satellites[17].name.c_str(),satellites.back().name.c_str(),sum/(3600*3));
+
 
     auto end = std::chrono::system_clock::now();
     std::time_t endtime = std::chrono::system_clock::to_time_t(end);

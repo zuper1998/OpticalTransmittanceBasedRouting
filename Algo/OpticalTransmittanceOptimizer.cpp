@@ -17,7 +17,7 @@ std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start,
     int count = 0;
     while (true) {
         printf("%d  %zu  %zu \n", ++count, paths.size(), good_paths.size());
-        if (count == 8) { return good_paths; };
+        if (count == 6) { return good_paths; };
         for (auto const &path: paths) {
             for (auto const &edge: path->getLastEdge().getEndNode()->edges) {
                 if (path->isViable(edge)) {

@@ -17,12 +17,12 @@ public:
     Path(ProxyEdge pe) {path.push_back(pe);}
 
     Path(Path const &p){
-        std::for_each(p.path.begin(), p.path.end(), [this](ProxyEdge const& pe){this->path.push_back(pe);});
+        path.insert(path.end(),p.path.begin(),p.path.end());
     }
 
 
 
-    void addEdge(ProxyEdge pe) {
+    void addEdge(ProxyEdge const& pe) {
         path.push_back(pe);
     }
     ProxyEdge const& getLastEdge() const{

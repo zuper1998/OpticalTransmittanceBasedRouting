@@ -9,6 +9,7 @@
 #include <vector>
 #include <iostream>
 #include <unordered_map>
+#include <map>
 #include "SatelliteNode.h"
 
 #include "../Algo/OpticalTransmittanceOptimizer.h"
@@ -22,7 +23,7 @@ public:
             std::cout<<sat.name<<std::endl;
         }
     }
-
+    void printStats()const;
     void generateBest();
 };
 

@@ -48,7 +48,7 @@ void Network::generateBest() {
         sum+=edges_best[EdgeToStr(edge)];
        printf("%s: %f\n", EdgeToStr(edge).c_str() , edges_best[EdgeToStr(edge)]);
     }
-    printf("For the path between %s and %s avarage bitrate was %f\n",satellites[17].name.c_str(),satellites.back().name.c_str(),sum/(3600*3));
+    printf("For the path between %s and %s avarage bitrate was %f sent bits: %f\n",satellites[17].name.c_str(),satellites.back().name.c_str(),sum/(3600*3),sum);
 
 
     auto end = std::chrono::system_clock::now();
@@ -58,3 +58,25 @@ void Network::generateBest() {
               << "elapsed time: " << elapsed_seconds.count() << "s\n";
 
 }
+
+
+double countDistinctDestinations(std::vector<Edge> const& edges){
+    std::map<std::string,int> out;
+    for(Edge const& e : edges){
+        out.emplace(e.destination->name,0);
+    }
+    return out.size();
+
+}
+
+void Network::printStats() const{
+    double satNum = satellites.size();
+    double edges = 0;
+    for(auto & sat : satellites){
+        edges+= countDistinctDestinations(sat.edges);
+    }
+    printf("Sats: %f Avarege distinct edges: %f \n",satNum,edges/satNum);
+}
+
+
+

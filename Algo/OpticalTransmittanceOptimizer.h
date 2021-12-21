@@ -8,6 +8,8 @@
 #include <vector>
 #include "Path.h"
 #include <memory>
+#include <random>
+#include <algorithm>
 
 #include "../SatData/SatelliteNode.h"
 
@@ -19,7 +21,7 @@ public:
 
     static double calculatePathOpticalThroughput(const Path &p);
 
-    static void
+    static double
     Pathing(const SatelliteNode &end, std::vector<std::shared_ptr<Path>> &tmp_paths, std::vector<Path> &good_paths,
             const std::shared_ptr<Path> &path, const Edge &edge);
 

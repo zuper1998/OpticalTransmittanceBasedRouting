@@ -10,25 +10,34 @@ std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start,
     std::vector<std::shared_ptr<Path>> paths;
     std::vector<std::shared_ptr<Path>> tmp_paths;
     std::vector<Path> good_paths;
+    std::random_device rd;
+    std::default_random_engine rng(rd());
+
     for (auto const &startEdge: start.edges) {
         paths.push_back(std::make_shared<Path>(ProxyEdge(&startEdge, 0, 0)));
     }
     std::printf("Path: %lu, ProxyEdge: %lu Edge %lu\n", sizeof(Path), sizeof(ProxyEdge), sizeof(Edge));
     int count = 0;
     while (true) {
+        double best = 0;
         printf("%d  %zu  %zu \n", ++count, paths.size(), good_paths.size());
-        if (count == 6) { return good_paths; };
+        //if (count == 6) { return good_paths; };
+
         for (auto const &path: paths) {
+            if(tmp_paths.size()>100000) break; //if it hits this part it no longer get new goodpaths
+
             for (auto const &edge: path->getLastEdge().getEndNode()->edges) {
                 if (path->isViable(edge)) {
-                    Pathing(end, tmp_paths, good_paths, path, edge);
+                    best = std::max(best, Pathing(end, tmp_paths, good_paths, path, edge)*constants::entangledPhotonDetectionRateHz);
                 }
             }
         }
         //printf("TMPPATH %lu\n",sizeof( Path)*tmp_paths.size());
+        printf("Best of round %d is total: %f avarage:%f\n",count,best,best/3600);
         paths.clear();
         paths.insert(std::end(paths), std::begin(tmp_paths), std::end(tmp_paths));
         tmp_paths.clear();
+        std::shuffle(paths.begin(),paths.end(),rng);
         if (paths.empty()) break;
     }
 
@@ -36,7 +45,7 @@ std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start,
 
 }
 
-void
+double
 OpticalTransmittanceOptimizer::Pathing(const SatelliteNode &end, std::vector<std::shared_ptr<Path>> &tmp_paths,
                                        std::vector<Path> &good_paths, const std::shared_ptr<Path> &path,
                                        const Edge &edge) {
@@ -47,10 +56,12 @@ OpticalTransmittanceOptimizer::Pathing(const SatelliteNode &end, std::vector<std
     if ((*edge.destination) == end) {//this can be expanded by making it clip to every end node that is desired
         if (optimizePath(*path1)) {
             good_paths.emplace_back(*path1);
+            return calculatePathOpticalThroughput(*path1);
         }
     } else {
         tmp_paths.emplace_back(std::move(path1));
     }
+    return 0;
 }
 
 

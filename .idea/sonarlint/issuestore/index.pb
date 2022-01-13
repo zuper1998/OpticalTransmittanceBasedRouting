@@ -5,8 +5,6 @@
 Algo/Path.cpp,9/8/9830fb28ab6bd80258fa1942080dc14d0449b6d4
 @
 SatData/Edge.cpp,7/e/7e31c43dee2f8945cd31ad04d386b32c34b34a5b
-D
-loadSats/LoadSat.cpp,4/9/49a73c622584c0e8205c1534fb360fc8776b235f
 B
 loadSats/LoadSat.h,6/1/614f4f06426d3f7e7a64a19d30ec1c18f80b7d44
 A

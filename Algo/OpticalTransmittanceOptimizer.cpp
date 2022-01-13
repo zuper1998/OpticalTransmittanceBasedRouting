@@ -5,7 +5,7 @@
 #include <iostream>
 #include "OpticalTransmittanceOptimizer.h"
 
-std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start, SatelliteNode const &end) {
+std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start, std::vector<SatelliteNode> const &ends) {
 
     std::vector<std::shared_ptr<Path>> paths;
     std::vector<std::shared_ptr<Path>> tmp_paths;
@@ -21,14 +21,12 @@ std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start,
     while (true) {
         double best = 0;
         printf("%d  %zu  %zu \n", ++count, paths.size(), good_paths.size());
-        //if (count == 6) { return good_paths; };
-
         for (auto const &path: paths) {
             if(tmp_paths.size()>1000000) break; //if it hits this part it no longer get new goodpaths
 
             for (auto const &edge: path->getLastEdge().getEndNode()->edges) {
                 if (path->isViable(edge)) {
-                    best = std::max(best, Pathing(end, tmp_paths, good_paths, path, edge)*constants::entangledPhotonDetectionRateHz);
+                    best = std::max(best, Pathing(ends, tmp_paths, good_paths, path, edge)*constants::entangledPhotonDetectionRateHz);
                 }
             }
         }
@@ -46,14 +44,21 @@ std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start,
 }
 
 double
-OpticalTransmittanceOptimizer::Pathing(const SatelliteNode &end, std::vector<std::shared_ptr<Path>> &tmp_paths,
+OpticalTransmittanceOptimizer::Pathing(std::vector<SatelliteNode> const &ends, std::vector<std::shared_ptr<Path>> &tmp_paths,
                                        std::vector<Path> &good_paths, const std::shared_ptr<Path> &path,
                                        const Edge &edge) {
-    auto path1 = std::make_shared<Path>(*path);
+    auto path1 = std::make_shared<Path>(*path) ;
     path1->addEdge(ProxyEdge(&edge, 0, 0));
 
+    bool found = false;
 
-    if ((*edge.destination) == end) {//this can be expanded by making it clip to every end node that is desired
+    for (auto const &s : ends){
+        if(s==*path1->getLastEdge().getEndNode()){
+            found = true;
+        }
+    }
+
+    if ( found ) {//this can be expanded by making it clip to every end node that is desired
         if (optimizePath(*path1)) {
             good_paths.emplace_back(*path1);
             return calculatePathOpticalThroughput(*path1);

@@ -17,12 +17,12 @@ class OpticalTransmittanceOptimizer {
 public:
     static bool optimize(ProxyEdge &edge, ProxyEdge &edge1);
 
-    static std::vector<Path> BFS(const SatelliteNode &start, const SatelliteNode &end);
+    static std::vector<Path> BFS(const SatelliteNode &start, const std::vector<SatelliteNode> &ends);
 
     static double calculatePathOpticalThroughput(const Path &p);
 
     static double
-    Pathing(const SatelliteNode &end, std::vector<std::shared_ptr<Path>> &tmp_paths, std::vector<Path> &good_paths,
+    Pathing(std::vector<SatelliteNode> const &ends, std::vector<std::shared_ptr<Path>> &tmp_paths, std::vector<Path> &good_paths,
             const std::shared_ptr<Path> &path, const Edge &edge);
 
 

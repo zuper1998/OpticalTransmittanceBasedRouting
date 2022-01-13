@@ -6,6 +6,6 @@ int main() {
     Network network = loader.LoadFromFile("/home/narcano/OpticalTransmittanceBasedRouting/QSAT_RETRO_LOW.satNetwork");
     network.printStats();
     network.generateBest();
-    getchar();
+    //getchar();
     return 0;
 }

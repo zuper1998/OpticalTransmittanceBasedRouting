@@ -28,6 +28,7 @@ Network LoadSat::LoadFromFile(std::string const& f) {
         //std::cout<<line<<std::endl;
         satelliteNode->addEdge(loadEdge(line));
     }
+
     network.addSatellite(*satelliteNode);
     }
     return network;

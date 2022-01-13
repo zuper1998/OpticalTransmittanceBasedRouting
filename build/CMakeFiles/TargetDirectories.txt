@@ -1,0 +1,3 @@
+/home/narcano/OpticalTransmittanceBasedRouting/build/CMakeFiles/OpticalTransmittanceBasedRouting.dir
+/home/narcano/OpticalTransmittanceBasedRouting/build/CMakeFiles/edit_cache.dir
+/home/narcano/OpticalTransmittanceBasedRouting/build/CMakeFiles/rebuild_cache.dir

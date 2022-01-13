@@ -22,13 +22,25 @@ std::string EdgeToStr(Edge const&e) {
 void Network::generateBest() {
     auto start = std::chrono::system_clock::now();
 
-    auto paths = OpticalTransmittanceOptimizer::BFS(satellites[17], satellites.back());
+    std::vector<SatelliteNode> endNodes;
+
+    for(SatelliteNode const &s: satellites){
+        if(s.name.find("SAT")== std::string::npos){
+            endNodes.push_back(s);
+        }
+    }
+
+
+    //this is where the stuff starts
+
+    SatelliteNode startN = endNodes[0];
+
+    auto paths = OpticalTransmittanceOptimizer::BFS(startN, endNodes);
 
     std::unordered_map<std::string, double> edges_best;
 
-
-    for (auto &edge: satellites[17].edges) {
-        //printf("%s\n",EdgeToStr(edge).c_str());
+    for (auto &edge: startN.edges) {
+        printf("%s\n",EdgeToStr(edge).c_str());
         edges_best.try_emplace(EdgeToStr(edge).c_str(), 0);
     }
 
@@ -44,11 +56,11 @@ void Network::generateBest() {
         }
     }
     double sum = 0;
-    for (auto &edge: satellites[17].edges) {
+    for (auto &edge: startN.edges) {
         sum+=edges_best[EdgeToStr(edge)];
        printf("%s: %f\n", EdgeToStr(edge).c_str() , edges_best[EdgeToStr(edge)]);
     }
-    printf("For the path between %s and %s avarage bitrate was %f sent bits: %f\n",satellites[17].name.c_str(),satellites.back().name.c_str(),sum/(3600*3),sum);
+    printf("For the path between %s and %s avarage bitrate was %f sent bits: %f\n",startN.name.c_str(),satellites.back().name.c_str(),sum/(3600*3),sum);
 
 
     auto end = std::chrono::system_clock::now();

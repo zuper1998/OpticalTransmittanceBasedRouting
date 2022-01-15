@@ -22,7 +22,7 @@ std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start,
         double best = 0;
         printf("%d  %zu  %zu \n", ++count, paths.size(), good_paths.size());
         for (auto const &path: paths) {
-            if(tmp_paths.size()>1000000) break; //if it hits this part it no longer get new goodpaths
+            if(tmp_paths.size()>100000) break; //if it hits this part it no longer get new goodpaths
 
             for (auto const &edge: path->getLastEdge().getEndNode()->edges) {
                 if (path->isViable(edge)) {
@@ -83,13 +83,13 @@ bool OpticalTransmittanceOptimizer::optimize(ProxyEdge &edge, ProxyEdge &edge1) 
     double t1 = edge.getStart();
     double t2 = edge.getEnd();
     //Masik
-    double t3 = edge.getStart();
-    double t4 = edge.getEnd();
+    double t3 = edge1.getStart();
+    double t4 = edge1.getEnd();
 
     if (t4 < t2) { // III. eset
         edge.removeFromEnd((int) (t2 - t4));
     } else if (t3 < t1) { // IV. es V eset
-        edge.removeFromEnd((int) (t1 - t3));
+        edge1.removeFromStart((int) (t1 - t3));
     }
     if (edge.getDuration() < constants::min_time_delta || edge1.getDuration() < constants::min_time_delta) {
         return false;

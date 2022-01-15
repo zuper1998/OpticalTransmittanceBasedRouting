@@ -3,7 +3,7 @@
 
 int main() {
     auto loader = LoadSat();
-    Network network = loader.LoadFromFile("/home/narcano/OpticalTransmittanceBasedRouting/QSAT_RETRO_LOW.satNetwork");
+    Network network = loader.LoadFromFile("..\\QSAT_RETRO_LOW.satNetwork");
     network.printStats();
     network.generateBest();
     //getchar();

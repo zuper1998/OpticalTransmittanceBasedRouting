@@ -9,6 +9,7 @@
 #include <string>
 #include <sstream>
 #include "../SatData/Edge.h"
+#include "Constants.h"
 
 class ProxyEdge {
     Edge const* edge;
@@ -54,6 +55,12 @@ public:
 
     [[nodiscard]] double getOverallTransmittanceTroughputUntil(double d) const {
         return edge->getTransmittanceBetweenUntil(start,end,d);
+    }
+
+    [[nodiscard]] std::string GraphData() const {
+        std::stringstream s ;
+        s << " [label =  \"[" << getStart() << " , " << getEnd() << "]  " << getOverallTransmittanceTroughput()*constants::entangledPhotonDetectionRateHz << "\"];";
+        return s.str();
     }
 };
 

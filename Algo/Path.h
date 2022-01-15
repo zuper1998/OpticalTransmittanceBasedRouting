@@ -60,7 +60,7 @@ public:
     }
 
     bool containsNode(SatelliteNode& sn) const;
-
+    void printToFile(std::ostream&, const std::string&)const;
 
     friend std::ostream& operator<<(std::ostream& os, const Path& p);
 

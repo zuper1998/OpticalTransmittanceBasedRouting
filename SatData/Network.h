@@ -19,12 +19,14 @@ class Network {
 public:
     void addSatellite(SatelliteNode const&);
     void printAllNodes(){
-        for(auto sat : satellites){
+        for(const auto& sat : satellites){
             std::cout<<sat.name<<std::endl;
         }
     }
     void printStats()const;
     void generateBest();
+
+    static void GeneratPathFrom(std::vector<SatelliteNode> &endNodes,int index) ;
 };
 
 

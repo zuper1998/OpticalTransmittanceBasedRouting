@@ -28,3 +28,12 @@ std::ostream &operator<<(std::ostream &os, const Path &p) {
     return os;
 
 }
+
+void Path::printToFile(std::ostream &os,const std::string& sstart) const {
+    std::string first = sstart;
+    for(auto const& edge : path){
+        os << first << " -> " << edge.getEndNode()->name << edge.GraphData()  << std::endl;
+        first = edge.getEndNode()->name;
+    }
+
+}

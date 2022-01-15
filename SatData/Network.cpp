@@ -64,7 +64,7 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index) {
     }
     double cnt = 0;
     for (auto const &p_ptr: paths) {
-        double progress = cnt++ / (double) paths.size();
+        //double progress = cnt++ / (double) paths.size();
         //std::cout << progress << " | " << paths.size() << "                               \r" << std::flush;
         //OpticalTransmittanceOptimizer::optimizePath(p_ptr);
         double val = OpticalTransmittanceOptimizer::calculatePathOpticalThroughput(p_ptr) *
@@ -103,7 +103,7 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index) {
 }
 
 
-double countDistinctDestinations(std::vector<Edge> const &edges) {
+unsigned long long countDistinctDestinations(std::vector<Edge> const &edges) {
     std::map<std::string, int> out;
     for (Edge const &e: edges) {
         out.emplace(e.destination->name, 0);
@@ -113,12 +113,13 @@ double countDistinctDestinations(std::vector<Edge> const &edges) {
 }
 
 void Network::printStats() const {
-    double satNum = satellites.size();
-    double edges = 0;
+    unsigned long long satNum = satellites.size();
+    unsigned long long edges = 0;
     for (auto &sat: satellites) {
         edges += countDistinctDestinations(sat.edges);
     }
-    printf("Sats: %f Avarege distinct edges: %f \n", satNum, edges / satNum);
+
+    printf("Sats: %llu Avarege distinct edges: %llu \n", satNum, edges / satNum);
 }
 
 

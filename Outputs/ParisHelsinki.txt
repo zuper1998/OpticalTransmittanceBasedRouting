@@ -2,22 +2,4 @@ digraph G{
 layout=dot
 graph [ dpi = 300 ];
 rankdir=LR;
-Paris -> SAT_4 [label =  "[6648 , 7138]  164467"];
-SAT_4 -> SAT_5 [label =  "[7355 , 8093]  80292.5"];
-SAT_5 -> Helsinki [label =  "[8228 , 8616]  99731.8"];
-Paris -> SAT_3 [label =  "[7389 , 7904]  190087"];
-SAT_3 -> SAT_5 [label =  "[7812 , 8423]  32433.2"];
-SAT_5 -> Helsinki [label =  "[8228 , 8616]  99731.8"];
-Paris -> SAT_2 [label =  "[8138 , 8662]  201972"];
-SAT_2 -> SAT_12 [label =  "[8619 , 9380]  44523.8"];
-SAT_12 -> SAT_3 [label =  "[8098 , 8423]  16397.1"];
-SAT_3 -> SAT_5 [label =  "[7812 , 8423]  32433.2"];
-SAT_5 -> Helsinki [label =  "[8228 , 8616]  99731.8"];
-Paris -> SAT_1 [label =  "[8895 , 9414]  194056"];
-SAT_1 -> SAT_11 [label =  "[9407 , 10167]  44483.8"];
-SAT_11 -> SAT_2 [label =  "[8885 , 9646]  131140"];
-SAT_2 -> SAT_12 [label =  "[8619 , 9380]  44523.8"];
-SAT_12 -> SAT_3 [label =  "[8098 , 8423]  16397.1"];
-SAT_3 -> SAT_5 [label =  "[7812 , 8423]  32433.2"];
-SAT_5 -> Helsinki [label =  "[8228 , 8616]  99731.8"];
 }

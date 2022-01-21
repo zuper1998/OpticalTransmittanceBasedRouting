@@ -31,10 +31,10 @@ public:
 
     bool isViable(Edge const&edge) const {
         double delta = edge.getStart() - path[0].getEnd();
-        if(delta>(constants::max_time_delta-constants::min_time_delta)){
+        if(delta>(constants::max_time_delta)){ // soft check for the duration of the math, if the time between the end of first transmission and the start of the last one exceeds the maximum allowed time it returns false
             return false;
-        } else if(!containsNode(*edge.destination)) {
-            return (edge.getEnd() > getLastEdge().getStart());
+        } else if(!containsNode(*edge.destination)) { // the route didnt already visited the node
+            return (edge.getEnd() > getLastEdge().getStart()); // the new transmissions end time is before the current path's last transmissions start returns false
         }
 
         return false;

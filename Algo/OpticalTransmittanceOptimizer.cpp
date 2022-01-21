@@ -42,21 +42,19 @@ std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start,
     return good_paths;
 
 }
-
+/*
+ * Calculates best throughput by using the algorithm
+ */
 double
 OpticalTransmittanceOptimizer::Pathing(std::vector<SatelliteNode> const &ends, std::vector<std::shared_ptr<Path>> &tmp_paths,
                                        std::vector<Path> &good_paths, const std::shared_ptr<Path> &path,
                                        const Edge &edge) {
-    auto path1 = std::make_shared<Path>(*path) ;
+    auto path1 = std::make_shared<Path>(*path) ; // copy path so we dont modify the original one
     path1->addEdge(ProxyEdge(&edge, 0, 0));
 
-    bool found = false;
 
-    for (auto const &s : ends){
-        if(s==*path1->getLastEdge().getEndNode()){
-            found = true;
-        }
-    }
+
+    bool found = std::any_of(ends.begin(),ends.end(),[&](auto s){return s==*path1->getLastEdge().getEndNode(); }); // is there an end node that can be found in the last elemnent in the path
 
     if ( found ) {//this can be expanded by making it clip to every end node that is desired
         if (optimizePath(*path1)) {
@@ -78,7 +76,22 @@ double OpticalTransmittanceOptimizer::calculatePathOpticalThroughput(Path const 
     return out;
 }
 
-//Paprion van rata az algo
+/*
+ * Omtimize the two transmission intervals
+ *
+ * case III:
+ * A  t1----------t2 B
+ * B    t3----t4 C
+ *
+ * case IV:
+ * A     t1-------t2 B
+ * B t3-----------------t4 C
+ *
+ * case V:
+ * A     t1--------------------t2 B
+ * B t3-----------------t4 C
+ *
+ */
 bool OpticalTransmittanceOptimizer::optimize(ProxyEdge &edge, ProxyEdge &edge1) {
     double t1 = edge.getStart();
     double t2 = edge.getEnd();
@@ -86,29 +99,24 @@ bool OpticalTransmittanceOptimizer::optimize(ProxyEdge &edge, ProxyEdge &edge1) 
     double t3 = edge1.getStart();
     double t4 = edge1.getEnd();
 
-    if (t4 < t2) { // III. eset
+    if (t4 < t2) { // case III.
         edge.removeFromEnd((int) (t2 - t4));
-    } else if (t3 < t1) { // IV. es V eset
+    }
+    if (t3 < t1) { // case IV. and V -- case V is when both if's are true
         edge1.removeFromStart((int) (t1 - t3));
     }
-    if (edge.getDuration() < constants::min_time_delta || edge1.getDuration() < constants::min_time_delta) {
+    if (edge.getDuration() < constants::min_time_delta || edge1.getDuration() < constants::min_time_delta) { //check if the lenghth of the transmission has fallen below the min amount
         return false;
     }
     return true;
 }
 
-/*
-  double delta = edge.getEnd() - edge1.getStart();
-    while(delta-->0) {  //overlap amount
-        if(edge.getOverallTransmittanceTroughput() < edge1.getOverallTransmittanceTroughput()){
-            edge1.removeFromStart();
-        } else {
-            edge.removeFromEnd();
-        }
-    }
-*/
+/*\
+ *  Optimize all path's
+ *  @return was the optimization successful
+ */
 bool OpticalTransmittanceOptimizer::optimizePath(Path &p) {
-    if(!cutInShape(p)) return false;
+    if(!cutInShape(p)) return false; // if can't be cut in shape return false
     for (int i = 0; i < p.path.size() - 1; i++) {
         if (!optimize(p.path[i], p.path[i + 1]))
             return false;
@@ -124,7 +132,7 @@ bool OpticalTransmittanceOptimizer::cutInShape(Path &path) {
     double delta =pe->getEnd() - ps->getStart();
     if(delta>constants::max_time_delta){
         while(delta-->0){
-            if(ps->getOverallTransmittanceTroughput() < ps->getOverallTransmittanceTroughput()){
+            if(ps->getOverallTransmittanceTroughput() < pe->getOverallTransmittanceTroughput()){
                 ps->removeFromStart();
             } else {
                 pe->removeFromEnd();

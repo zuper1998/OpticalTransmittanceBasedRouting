@@ -14,7 +14,6 @@
 
 class SatelliteNode;
 class Edge {
-    std::vector<double> transmittance;
     double startTime{};
     double endTime{};
 
@@ -24,6 +23,8 @@ public:
     }
     Edge()=default;
     SatelliteNode* destination{};
+    std::vector<double> transmittance;
+
     [[nodiscard]] double getStart() const {
         return startTime;
     }
@@ -50,6 +51,7 @@ public:
         }
         return d;
     }
+
 
 
 

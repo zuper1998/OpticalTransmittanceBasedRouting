@@ -80,24 +80,35 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index) {
     for(auto& endN : endNodes) {
         if(endN==startN) continue;
         double sum = 0;
-        std::stringstream s;
-        s << "..\\Outputs\\";
-        s <<startN.name.c_str() << endN.name.c_str()<<".txt";
-        std::ofstream out(s.str(),std::ios_base::out);
-        out<<"digraph G{\n"
+        std::stringstream outputFileGraph;
+        std::stringstream outputFileData;
+
+        outputFileGraph << R"(..\Outputs\Graph\)";
+        outputFileData  << R"(..\Outputs\Data\)";
+
+
+        outputFileGraph << startN.name.c_str() << endN.name.c_str() << ".txt";
+        outputFileData <<  startN.name.c_str() << endN.name.c_str() << ".txt";
+
+        std::ofstream outGraph(outputFileGraph.str(), std::ios_base::out);
+        std::ofstream outData(outputFileData.str(),std::ios_base::out);
+        outGraph << "digraph G{\n"
              "layout=dot\n"
              "graph [ dpi = 300 ];\n"
-             "rankdir=LR;"<<std::endl;
+             "rankdir=LR;" << std::endl;
 
         for (auto &edge: startN.edges) {
             std::string combined = EdgeToStr(edge) + endN.name;
             sum += edges_best[combined];
-            path_best[combined].printToFile(out,endNodes[index].name);
-            //printf("%s: %f\n", combined.c_str(), edges_best[combined]);
+            path_best[combined].printGraphToFile(outGraph, endNodes[index].name);
+            path_best[combined].printDataToFile(outData, edges_best[combined]);
+
+            //printf("%outputFileGraph: %f\n", combined.c_str(), edges_best[combined]);
         }
-        out<<"}"<<std::endl;
-        printf("For the path between %s and %s avarage bitrate was %f sent bits: %f\n", startN.name.c_str(),
+        outGraph << "}" << std::endl;
+        printf("For the path between %outputFileGraph and %outputFileGraph avarage bitrate was %f sent bits: %f\n", startN.name.c_str(),
                endN.name.c_str(), sum / (3600 * 3), sum);
+
 
     }
 }

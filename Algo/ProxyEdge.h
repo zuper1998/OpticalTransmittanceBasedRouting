@@ -62,6 +62,8 @@ public:
         s << " [label =  \"[" << getStart() << " , " << getEnd() << "]  " << getOverallTransmittanceTroughput()*constants::entangledPhotonDetectionRateHz << "\"];";
         return s.str();
     }
+
+    void printTransmissionData(std::ostream &ostream)const;
 };
 
 

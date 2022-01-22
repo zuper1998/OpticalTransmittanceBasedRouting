@@ -1,0 +1,37 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Vienna -> SAT_13 [label =  "[0 , 274]  99274.2"];
+SAT_13 -> Copenhagen [label =  "[0 , 279]  96877.9"];
+Vienna -> SAT_3 [label =  "[1702 , 1867]  39771.8"];
+SAT_3 -> Copenhagen [label =  "[1702 , 1867]  42709.8"];
+Vienna -> SAT_3 [label =  "[7591 , 7934]  124789"];
+SAT_3 -> Copenhagen [label =  "[7591 , 7934]  103694"];
+Vienna -> SAT_2 [label =  "[2396 , 2654]  67392.5"];
+SAT_2 -> Copenhagen [label =  "[2396 , 2654]  75711.4"];
+Vienna -> SAT_2 [label =  "[8365 , 8654]  91669.6"];
+SAT_2 -> Copenhagen [label =  "[8365 , 8654]  77382.9"];
+Vienna -> SAT_1 [label =  "[3111 , 3429]  92008.3"];
+SAT_1 -> Copenhagen [label =  "[3111 , 3429]  106802"];
+Vienna -> SAT_1 [label =  "[9150 , 9348]  54181.9"];
+SAT_1 -> Copenhagen [label =  "[9150 , 9348]  48153.1"];
+Vienna -> SAT_16 [label =  "[3871 , 4318]  123718"];
+SAT_16 -> SAT_9 [label =  "[4206 , 4944]  80295.2"];
+SAT_9 -> SAT_7 [label =  "[5120 , 5728]  32356.3"];
+SAT_7 -> SAT_13 [label =  "[6260 , 7282]  55078.7"];
+SAT_13 -> SAT_4 [label =  "[6680 , 7202]  20533.9"];
+SAT_4 -> Copenhagen [label =  "[6718 , 7202]  158531"];
+Vienna -> SAT_15 [label =  "[4741 , 5094]  89192.4"];
+SAT_15 -> SAT_9 [label =  "[4741 , 5273]  29779.2"];
+SAT_9 -> SAT_7 [label =  "[5120 , 5728]  32356.3"];
+SAT_7 -> SAT_13 [label =  "[6260 , 7282]  55078.7"];
+SAT_13 -> SAT_4 [label =  "[6680 , 7202]  20533.9"];
+SAT_4 -> Copenhagen [label =  "[6718 , 7202]  158531"];
+Vienna -> SAT_14 [label =  "[5650 , 5834]  43370.1"];
+SAT_14 -> SAT_8 [label =  "[5650 , 6495]  48721.5"];
+SAT_8 -> SAT_2 [label =  "[7025 , 7635]  32409.8"];
+SAT_2 -> Copenhagen [label =  "[8286 , 8654]  96799.2"];
+Vienna -> SAT_4 [label =  "[6826 , 7202]  151868"];
+SAT_4 -> Copenhagen [label =  "[6826 , 7202]  129809"];
+}

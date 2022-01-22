@@ -1,8 +1,0 @@
-digraph G{
-layout=dot
-graph [ dpi = 300 ];
-rankdir=LR;
-Rome -> SAT_13 [label =  "[6350 , 6523]  40723.7"];
-SAT_13 -> Rome [label =  "[6350 , 6523]  40723.7"];
-Rome -> Budapest [label =  "[6513 , 6684]  40125.7"];
-}

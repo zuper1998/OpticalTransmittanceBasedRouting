@@ -14,7 +14,7 @@ class Path {
 public:
     std::vector<ProxyEdge> path;
     Path()=default;
-    Path(ProxyEdge pe) {path.push_back(pe);}
+    explicit Path( ProxyEdge pe) {path.push_back(pe);}
 
     Path(Path const &p){
         path.insert(path.end(),p.path.begin(),p.path.end());
@@ -60,11 +60,13 @@ public:
     }
 
     bool containsNode(SatelliteNode& sn) const;
-    void printToFile(std::ostream&, const std::string&)const;
+    void printGraphToFile(std::ostream &os, const std::string &sstart)const;
 
     friend std::ostream& operator<<(std::ostream& os, const Path& p);
 
     static std::string ProxyEdgeToStr(const ProxyEdge &e);
+
+    void printDataToFile(std::ostream &os,double) const;
 };
 
 #endif //OPTICALTRANSMITTANCEBASEDROUTING_PATH_H

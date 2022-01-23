@@ -22,7 +22,7 @@ std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start,
         double best = 0;
         printf("%d  %zu  %zu \n", ++count, paths.size(), good_paths.size());
         for (auto const &path: paths) {
-            if(tmp_paths.size()>100000) break; //if it hits this part it no longer get new goodpaths
+            if(tmp_paths.size()>constants::maxSimPaths) break; //if it hits this part it no longer get new goodpaths
 
             for (auto const &edge: path->getLastEdge().getEndNode()->edges) {
                 if (path->isViable(edge)) {

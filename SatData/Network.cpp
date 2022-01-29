@@ -7,6 +7,7 @@
 #include <chrono>
 #include <fstream>
 #include "Network.h"
+#include "../Utility.h"
 
 void Network::addSatellite(const SatelliteNode &sat) {
     satellites.push_back(sat);
@@ -22,7 +23,7 @@ std::string EdgeToStr(Edge const &e) {
 
 
 
-void Network::generateBest() {
+void Network::generateBest(const std::filesystem::directory_entry& f) {
     auto start = std::chrono::system_clock::now();
 
     std::vector<SatelliteNode> endNodes;
@@ -36,7 +37,7 @@ void Network::generateBest() {
 
     //this is where the stuff starts
     for(int i = 0; i<endNodes.size();i++) {
-        GeneratPathFrom(endNodes,i);
+        GeneratPathFrom(endNodes,i,f);
     }
     auto end = std::chrono::system_clock::now();
     std::time_t endtime = std::chrono::system_clock::to_time_t(end);
@@ -46,10 +47,10 @@ void Network::generateBest() {
 
 }
 
-void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index) {
+void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index, const std::filesystem::directory_entry& f) {
     SatelliteNode startN = endNodes[index];
 
-    auto paths = OpticalTransmittanceOptimizer::BFS(startN, endNodes);
+    auto paths = OpticalTransmittanceOptimizer::BFS(startN, endNodes,f);
 
     std::unordered_map<std::string, double> edges_best;
     std::unordered_map<std::string, Path> path_best;
@@ -83,9 +84,11 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index) {
         std::stringstream outputFileGraph;
         std::stringstream outputFileData;
 
-        outputFileGraph << R"(..\Outputs\Graph\)";
-        outputFileData  << R"(..\Outputs\Data\)";
+        outputFileGraph << R"(..\Outputs\)" << Utility::get_stem(f)  <<  R"(\Graph\)";
+        outputFileData  << R"(..\Outputs\)" << Utility::get_stem(f)  <<  R"(\Data\)";
 
+        std::filesystem::create_directories(outputFileData.str());
+        std::filesystem::create_directories(outputFileGraph.str());
 
         outputFileGraph << startN.name.c_str() << endN.name.c_str() << ".txt";
         outputFileData <<  startN.name.c_str() << endN.name.c_str() << ".txt";
@@ -101,17 +104,18 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index) {
             std::string combined = EdgeToStr(edge) + endN.name;
             sum += edges_best[combined];
             path_best[combined].printGraphToFile(outGraph, endNodes[index].name);
-            path_best[combined].printDataToFile(outData, edges_best[combined]);
+            path_best[combined].printDataToFile(outData, edges_best[combined],endNodes[index].name);
 
             //printf("%outputFileGraph: %f\n", combined.c_str(), edges_best[combined]);
         }
         outGraph << "}" << std::endl;
-        printf("For the path between %outputFileGraph and %outputFileGraph avarage bitrate was %f sent bits: %f\n", startN.name.c_str(),
+        printf("For the path between %s and %s avarage bitrate was %f sent bits: %f\n", startN.name.c_str(),
                endN.name.c_str(), sum / (3600 * 3), sum);
 
 
     }
 }
+
 
 
 unsigned long long countDistinctDestinations(std::vector<Edge> const &edges) {

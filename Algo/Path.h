@@ -66,7 +66,7 @@ public:
 
     static std::string ProxyEdgeToStr(const ProxyEdge &e);
 
-    void printDataToFile(std::ostream &os,double) const;
+    void printDataToFile(std::ostream &os,double, const std::string&) const;
 };
 
 #endif //OPTICALTRANSMITTANCEBASEDROUTING_PATH_H

@@ -37,9 +37,12 @@ void Path::printGraphToFile(std::ostream &os, const std::string& sstart) const {
     }
 
 }
-void Path::printDataToFile(std::ostream &os, double throughput) const {
+void Path::printDataToFile(std::ostream &os, double throughput, const std::string& StartNode) const {
     os << "TR: " << throughput << std::endl;
+    std::string start= StartNode;
     for(auto const& edge : path){
+        os << start << " | " << edge.getEndNode()->name << " | ";
+        start = edge.getEndNode()->name;
         edge.printTransmissionData(os);
     }
 

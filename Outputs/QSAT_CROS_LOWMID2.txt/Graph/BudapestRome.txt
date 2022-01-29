@@ -1,0 +1,32 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Budapest -> SAT_25 [label =  "[0 , 299]  104589"];
+SAT_25 -> SAT_10 [label =  "[227 , 1506]  178665"];
+SAT_10 -> SAT_2 [label =  "[1033 , 2016]  180134"];
+SAT_2 -> SAT_20 [label =  "[1730 , 3135]  257062"];
+SAT_20 -> SAT_29 [label =  "[2275 , 3135]  58456.9"];
+SAT_29 -> Rome [label =  "[2877 , 3425]  191589"];
+Budapest -> SAT_25 [label =  "[6513 , 6684]  40125.7"];
+SAT_25 -> SAT_8 [label =  "[7854 , 8630]  174223"];
+SAT_8 -> Rome [label =  "[9680 , 10011]  84725.4"];
+Budapest -> SAT_32 [label =  "[568 , 971]  162771"];
+SAT_32 -> Rome [label =  "[568 , 971]  155218"];
+Budapest -> SAT_31 [label =  "[1381 , 1797]  174655"];
+SAT_31 -> Rome [label =  "[1381 , 1797]  173388"];
+Budapest -> SAT_30 [label =  "[2204 , 2615]  164834"];
+SAT_30 -> Rome [label =  "[2204 , 2615]  169337"];
+Budapest -> SAT_29 [label =  "[3035 , 3425]  140486"];
+SAT_29 -> Rome [label =  "[3035 , 3425]  146181"];
+Budapest -> SAT_28 [label =  "[3877 , 4226]  110597"];
+SAT_28 -> Rome [label =  "[3877 , 4226]  114332"];
+Budapest -> SAT_27 [label =  "[4730 , 5016]  80077.5"];
+SAT_27 -> Rome [label =  "[4730 , 5016]  81737.9"];
+Budapest -> SAT_26 [label =  "[5602 , 5790]  47392.2"];
+SAT_26 -> Rome [label =  "[5602 , 5790]  47736.3"];
+Budapest -> SAT_8 [label =  "[9615 , 9802]  44403"];
+SAT_8 -> Rome [label =  "[9680 , 10011]  84725.4"];
+Budapest -> SAT_7 [label =  "[10305 , 10598]  72979.8"];
+SAT_7 -> Rome [label =  "[10393 , 10782]  106162"];
+}

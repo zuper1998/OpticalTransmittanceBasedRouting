@@ -10,6 +10,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <map>
+#include <filesystem>
 #include "SatelliteNode.h"
 
 #include "../Algo/OpticalTransmittanceOptimizer.h"
@@ -24,9 +25,9 @@ public:
         }
     }
     void printStats()const;
-    void generateBest();
+    void generateBest(const std::filesystem::directory_entry& f);
 
-    static void GeneratPathFrom(std::vector<SatelliteNode> &endNodes,int index) ;
+    static void GeneratPathFrom(std::vector<SatelliteNode> &endNodes,int index, const std::filesystem::directory_entry& f) ;
 };
 
 

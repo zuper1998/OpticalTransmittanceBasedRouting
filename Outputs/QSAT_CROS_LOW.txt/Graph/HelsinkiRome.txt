@@ -1,0 +1,25 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Helsinki -> SAT_13 [label =  "[0 , 137]  45407.1"];
+SAT_13 -> Rome [label =  "[0 , 137]  37176.6"];
+Helsinki -> SAT_16 [label =  "[4186 , 4521]  82999.5"];
+SAT_16 -> SAT_4 [label =  "[5147 , 5827]  48120.3"];
+SAT_4 -> SAT_14 [label =  "[6088 , 6460]  12828.9"];
+SAT_14 -> SAT_7 [label =  "[6088 , 7016]  159748"];
+SAT_7 -> SAT_13 [label =  "[6260 , 6523]  10591.9"];
+SAT_13 -> Rome [label =  "[6350 , 6523]  40723.7"];
+Helsinki -> SAT_15 [label =  "[5092 , 5272]  42164"];
+SAT_15 -> SAT_8 [label =  "[5092 , 6229]  173658"];
+SAT_8 -> SAT_14 [label =  "[5473 , 5790]  13715.7"];
+SAT_14 -> Rome [label =  "[5473 , 5790]  80894.6"];
+Helsinki -> SAT_6 [label =  "[7457 , 7733]  66429.7"];
+SAT_6 -> SAT_1 [label =  "[7786 , 8646]  58460.6"];
+SAT_1 -> Rome [label =  "[8981 , 9227]  59673.6"];
+Helsinki -> SAT_5 [label =  "[8228 , 8616]  99731.8"];
+SAT_5 -> SAT_1 [label =  "[8228 , 9101]  176165"];
+SAT_1 -> Rome [label =  "[8981 , 9227]  59673.6"];
+Helsinki -> SAT_1 [label =  "[8657 , 8826]  39872.1"];
+SAT_1 -> Rome [label =  "[8981 , 9227]  59673.6"];
+}

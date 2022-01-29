@@ -10,6 +10,7 @@
 #include <memory>
 #include <random>
 #include <algorithm>
+#include <filesystem>
 
 #include "../SatData/SatelliteNode.h"
 
@@ -17,7 +18,7 @@ class OpticalTransmittanceOptimizer {
 public:
     static bool optimize(ProxyEdge &edge, ProxyEdge &edge1);
 
-    static std::vector<Path> BFS(const SatelliteNode &start, const std::vector<SatelliteNode> &ends);
+    static std::vector<Path> BFS(const SatelliteNode &start, const std::vector<SatelliteNode> &ends, const std::filesystem::directory_entry&);
 
     static double calculatePathOpticalThroughput(const Path &p);
 

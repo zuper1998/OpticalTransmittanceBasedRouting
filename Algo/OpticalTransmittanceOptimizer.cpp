@@ -3,16 +3,24 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include "OpticalTransmittanceOptimizer.h"
+#include "../Utility.h"
 
-std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start, std::vector<SatelliteNode> const &ends) {
+std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start, std::vector<SatelliteNode> const &ends,  const std::filesystem::directory_entry&f) {
 
     std::vector<std::shared_ptr<Path>> paths;
     std::vector<std::shared_ptr<Path>> tmp_paths;
     std::vector<Path> good_paths;
     std::random_device rd;
     std::default_random_engine rng(rd());
+    std::stringstream dataFileName;
+    dataFileName << R"(..\Outputs\)" << Utility::get_stem(f) << R"(\genData\)";
+    std::filesystem::create_directories(dataFileName.str());
 
+    dataFileName << start.name.c_str() << ".txt";
+
+    std::ofstream dataFile (dataFileName.str(),std::ios_base::out);
     for (auto const &startEdge: start.edges) {
         paths.push_back(std::make_shared<Path>(ProxyEdge(&startEdge, 0, 0)));
     }
@@ -32,12 +40,14 @@ std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start,
         }
         //printf("TMPPATH %lu\n",sizeof( Path)*tmp_paths.size());
         printf("Best of round %d is total: %f avarage:%f\n",count,best,best/3600);
+        dataFile << best << " | " << best/3600  <<  " | " << paths.size() <<   std::endl;
         paths.clear();
         paths.insert(std::end(paths), std::begin(tmp_paths), std::end(tmp_paths));
         tmp_paths.clear();
         std::shuffle(paths.begin(),paths.end(),rng);
         if (paths.empty()) break;
     }
+
 
     return good_paths;
 

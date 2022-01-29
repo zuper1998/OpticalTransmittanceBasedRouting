@@ -1,0 +1,23 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Copenhagen -> SAT_13 [label =  "[0 , 279]  96877.9"];
+SAT_13 -> Helsinki [label =  "[0 , 522]  204813"];
+Copenhagen -> SAT_4 [label =  "[6517 , 6857]  88111"];
+SAT_4 -> SAT_7 [label =  "[6517 , 6873]  12476.8"];
+SAT_7 -> SAT_2 [label =  "[7000 , 7858]  58410.1"];
+SAT_2 -> SAT_5 [label =  "[7982 , 8450]  16021.9"];
+SAT_5 -> Helsinki [label =  "[8228 , 8616]  99731.8"];
+Copenhagen -> SAT_3 [label =  "[7230 , 7526]  83907.6"];
+SAT_3 -> SAT_7 [label =  "[7230 , 7526]  18772.1"];
+SAT_7 -> SAT_2 [label =  "[7230 , 7858]  48008.8"];
+SAT_2 -> SAT_6 [label =  "[7331 , 7733]  43320.1"];
+SAT_6 -> Helsinki [label =  "[7457 , 7733]  66429.7"];
+Copenhagen -> SAT_2 [label =  "[7951 , 8313]  110645"];
+SAT_2 -> SAT_6 [label =  "[7951 , 8313]  31160.7"];
+SAT_6 -> SAT_1 [label =  "[7951 , 8646]  52004.5"];
+SAT_1 -> Helsinki [label =  "[8657 , 8826]  39872.1"];
+Copenhagen -> SAT_1 [label =  "[8678 , 8826]  41562.4"];
+SAT_1 -> Helsinki [label =  "[8678 , 8826]  34983.2"];
+}

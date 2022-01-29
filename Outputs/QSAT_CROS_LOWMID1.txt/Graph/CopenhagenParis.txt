@@ -1,0 +1,34 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Copenhagen -> SAT_13 [label =  "[0 , 279]  96877.9"];
+SAT_13 -> SAT_27 [label =  "[0 , 568]  147266"];
+SAT_27 -> SAT_31 [label =  "[247 , 1228]  180082"];
+SAT_31 -> Paris [label =  "[1175 , 1513]  84944.1"];
+Copenhagen -> SAT_17 [label =  "[0 , 480]  165671"];
+SAT_17 -> SAT_31 [label =  "[377 , 1150]  158884"];
+SAT_31 -> Paris [label =  "[1175 , 1513]  84944.1"];
+Copenhagen -> SAT_17 [label =  "[5946 , 6389]  133564"];
+SAT_17 -> Paris [label =  "[5946 , 6422]  170440"];
+Copenhagen -> SAT_20 [label =  "[3689 , 4195]  186317"];
+SAT_20 -> SAT_16 [label =  "[3689 , 4636]  179027"];
+SAT_16 -> SAT_23 [label =  "[4951 , 5687]  124664"];
+SAT_23 -> SAT_4 [label =  "[4951 , 5687]  172955"];
+SAT_4 -> Paris [label =  "[6640 , 7105]  148073"];
+Copenhagen -> SAT_19 [label =  "[4438 , 4930]  171280"];
+SAT_19 -> SAT_15 [label =  "[4442 , 5423]  180082"];
+SAT_15 -> SAT_8 [label =  "[4951 , 6229]  178643"];
+SAT_8 -> SAT_4 [label =  "[5758 , 6738]  180056"];
+SAT_4 -> Paris [label =  "[6640 , 7105]  148073"];
+Copenhagen -> SAT_18 [label =  "[5190 , 5662]  153256"];
+SAT_18 -> Paris [label =  "[5196 , 5672]  156857"];
+Copenhagen -> SAT_4 [label =  "[6517 , 6857]  88111"];
+SAT_4 -> Paris [label =  "[6640 , 7105]  148073"];
+Copenhagen -> SAT_3 [label =  "[7230 , 7627]  109576"];
+SAT_3 -> Paris [label =  "[7370 , 7858]  167158"];
+Copenhagen -> SAT_2 [label =  "[7951 , 8389]  129693"];
+SAT_2 -> Paris [label =  "[8103 , 8607]  183763"];
+Copenhagen -> SAT_1 [label =  "[8678 , 9146]  149217"];
+SAT_1 -> Paris [label =  "[8840 , 9352]  194870"];
+}

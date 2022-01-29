@@ -1,0 +1,16 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Paris -> SAT_1 [label =  "[3109 , 3238]  30209.2"];
+SAT_1 -> SAT_16 [label =  "[3181 , 3857]  46173.7"];
+SAT_16 -> Berlin [label =  "[4012 , 4182]  39885.1"];
+Paris -> SAT_1 [label =  "[8840 , 9161]  131952"];
+SAT_1 -> Berlin [label =  "[8840 , 9161]  95657.7"];
+Paris -> SAT_4 [label =  "[6640 , 6834]  58728.5"];
+SAT_4 -> Berlin [label =  "[6640 , 6834]  46907.1"];
+Paris -> SAT_3 [label =  "[7370 , 7622]  87330.2"];
+SAT_3 -> Berlin [label =  "[7370 , 7622]  64618.5"];
+Paris -> SAT_2 [label =  "[8103 , 8396]  112699"];
+SAT_2 -> Berlin [label =  "[8103 , 8396]  80573.5"];
+}

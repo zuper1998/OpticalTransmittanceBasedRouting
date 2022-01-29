@@ -1,0 +1,9 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Berlin -> SAT_13 [label =  "[0 , 273]  101718"];
+SAT_13 -> Budapest [label =  "[0 , 299]  104589"];
+Berlin -> SAT_16 [label =  "[4012 , 4182]  39885.1"];
+SAT_16 -> Budapest [label =  "[4012 , 4376]  115117"];
+}

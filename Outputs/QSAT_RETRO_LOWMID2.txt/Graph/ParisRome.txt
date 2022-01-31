@@ -1,0 +1,27 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Paris -> SAT_32 [label =  "[351 , 855]  156440"];
+SAT_32 -> Rome [label =  "[421 , 971]  197002"];
+Paris -> SAT_31 [label =  "[1203 , 1640]  120170"];
+SAT_31 -> Rome [label =  "[1230 , 1797]  217193"];
+Paris -> SAT_30 [label =  "[2079 , 2404]  80816.1"];
+SAT_30 -> Rome [label =  "[2079 , 2615]  207390"];
+Paris -> SAT_7 [label =  "[4496 , 4775]  68754.5"];
+SAT_7 -> Rome [label =  "[4673 , 5014]  87558"];
+Paris -> SAT_6 [label =  "[5196 , 5579]  103131"];
+SAT_6 -> Rome [label =  "[5386 , 5802]  117171"];
+Paris -> SAT_5 [label =  "[5916 , 6364]  134264"];
+SAT_5 -> Rome [label =  "[6112 , 6579]  146166"];
+Paris -> SAT_4 [label =  "[6648 , 7138]  164467"];
+SAT_4 -> Rome [label =  "[6848 , 7349]  174076"];
+Paris -> SAT_3 [label =  "[7389 , 7904]  190087"];
+SAT_3 -> Rome [label =  "[7592 , 8111]  195230"];
+Paris -> SAT_2 [label =  "[8138 , 8662]  201972"];
+SAT_2 -> Rome [label =  "[8344 , 8868]  201583"];
+Paris -> SAT_1 [label =  "[8895 , 9414]  194056"];
+SAT_1 -> Rome [label =  "[9103 , 9618]  189249"];
+Paris -> SAT_8 [label =  "[9660 , 10157]  170245"];
+SAT_8 -> Rome [label =  "[9869 , 10361]  164396"];
+}

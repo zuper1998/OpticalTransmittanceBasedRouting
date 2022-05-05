@@ -11,8 +11,6 @@ int main() {
 
     for (const auto &file: directory_iterator(path)) {
         cout << file.path() << endl;
-
-
         auto loader = LoadSat();
         Network network = loader.LoadFromFile(file.path().string());
         network.printStats();

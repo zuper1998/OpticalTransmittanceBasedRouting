@@ -28,12 +28,10 @@ void Network::generateBest(const std::filesystem::directory_entry& f) {
 
     std::vector<SatelliteNode> endNodes;
 
-    for (SatelliteNode const &s: satellites) {
-        if (s.name.find("SAT") == std::string::npos) {
-            endNodes.push_back(s);
-        }
-    }
 
+    std::copy_if(satellites.begin(),satellites.end(),
+                 std::back_inserter(endNodes),
+                 [](SatelliteNode const& satelliteNode){return satelliteNode.name.find("SAT")==std::string::npos;});
 
     //this is where the stuff starts
     for(int i = 0; i<endNodes.size();i++) {
@@ -59,15 +57,10 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index, c
         if(s==startN) continue;
         for (auto &edge: startN.edges) {
             std::string combined = EdgeToStr(edge) + s.name;
-            //printf("%s\n",combined.c_str());
             edges_best.try_emplace(combined.c_str(), 0);
         }
     }
-    double cnt = 0;
     for (auto const &p_ptr: paths) {
-        //double progress = cnt++ / (double) paths.size();
-        //std::cout << progress << " | " << paths.size() << "                               \r" << std::flush;
-        //OpticalTransmittanceOptimizer::optimizePath(p_ptr);
         double val = OpticalTransmittanceOptimizer::calculatePathOpticalThroughput(p_ptr) *
                      constants::entangledPhotonDetectionRateHz;
         std::string endNodeName = p_ptr.getLastEdge().getEndNode()->name;
@@ -106,7 +99,6 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index, c
             path_best[combined].printGraphToFile(outGraph, endNodes[index].name);
             path_best[combined].printDataToFile(outData, edges_best[combined],endNodes[index].name);
 
-            //printf("%outputFileGraph: %f\n", combined.c_str(), edges_best[combined]);
         }
         outGraph << "}" << std::endl;
         printf("For the path between %s and %s avarage bitrate was %f sent bits: %f\n", startN.name.c_str(),
@@ -130,9 +122,10 @@ unsigned long long countDistinctDestinations(std::vector<Edge> const &edges) {
 void Network::printStats() const {
     unsigned long long satNum = satellites.size();
     unsigned long long edges = 0;
-    for (auto &sat: satellites) {
-        edges += countDistinctDestinations(sat.edges);
-    }
+
+    edges = std::accumulate(satellites.begin(),satellites.end(),0L,
+                            [](long long before, SatelliteNode const& newVal)\
+                            {return before + countDistinctDestinations(newVal.edges);});
 
     printf("Sats: %llu Avarege distinct edges: %llu \n", satNum, edges / satNum);
 }

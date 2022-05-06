@@ -53,9 +53,9 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index, c
     std::unordered_map<std::string, double> edges_best;
     std::unordered_map<std::string, Path> path_best;
 
-    for (auto &s: endNodes) {
+    for (auto const &s: endNodes) {
         if(s==startN) continue;
-        for (auto &edge: startN.edges) {
+        for (auto const&edge: startN.edges) {
             std::string combined = EdgeToStr(edge) + s.name;
             edges_best.try_emplace(combined.c_str(), 0);
         }

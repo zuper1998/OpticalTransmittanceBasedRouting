@@ -55,4 +55,3 @@ for QSAT_FOLDER in Path('Outputs').iterdir():
                 FOLDER.joinpath("Pics").mkdir();
                 for dataFile in FOLDER.iterdir():
                     genVis(dataFile)
-                    dawdwadawdawd

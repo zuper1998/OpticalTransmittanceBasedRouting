@@ -71,6 +71,13 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index, c
         }
     }
 
+    std::stringstream outputGeoData;
+
+    outputGeoData << R"(..\Outputs\)" << Utility::get_stem(f) << R"(\GeoData\)";
+    outputGeoData << startN.name + ".txt";
+    std::ofstream outGeoData(outputGeoData.str(), std::ios_base::out);
+
+
     for(auto& endN : endNodes) {
         if(endN==startN) continue;
         double sum = 0;
@@ -102,8 +109,8 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index, c
         }
         outGraph << "}" << std::endl;
         printf("For the path between %s and %s avarage bitrate was %f sent bits: %f\n", startN.name.c_str(),
-               endN.name.c_str(), sum / (3600 * 3), sum);
-
+               endN.name.c_str(), sum / (3600 * 4), sum);
+        outGeoData <<  startN.name.c_str()  << "|" <<  endN.name.c_str() << "|" <<sum / (3600 * 4)<<std::endl;
 
     }
 }

@@ -2,12 +2,12 @@ digraph G{
 layout=dot
 graph [ dpi = 300 ];
 rankdir=LR;
-Vienna -> SAT_13 [label =  "[0 , 274]  99274.2"];
-SAT_13 -> Budapest [label =  "[0 , 299]  104589"];
-Vienna -> SAT_16 [label =  "[3871 , 4318]  123718"];
-SAT_16 -> Budapest [label =  "[3877 , 4376]  151120"];
-Vienna -> SAT_15 [label =  "[4741 , 5094]  89192.4"];
-SAT_15 -> Budapest [label =  "[4741 , 5167]  116844"];
-Vienna -> SAT_14 [label =  "[5650 , 5834]  43370.1"];
-SAT_14 -> Budapest [label =  "[5650 , 5944]  74325.1"];
+Vienna -> SAT_13 [label =  "[0 , 274]  2905.02"];
+SAT_13 -> Budapest [label =  "[0 , 299]  94784.3"];
+Vienna -> SAT_14 [label =  "[5650 , 5834]  415.73"];
+SAT_14 -> Budapest [label =  "[5650 , 5944]  56068.7"];
+Vienna -> SAT_15 [label =  "[4741 , 5094]  1127.36"];
+SAT_15 -> Budapest [label =  "[4741 , 5167]  94144.8"];
+Vienna -> SAT_16 [label =  "[3871 , 4318]  2040.72"];
+SAT_16 -> Budapest [label =  "[3877 , 4376]  128901"];
 }

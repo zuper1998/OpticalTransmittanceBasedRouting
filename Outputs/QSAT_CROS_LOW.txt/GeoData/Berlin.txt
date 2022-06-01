@@ -1,0 +1,6 @@
+Budapest|0.244693
+Copenhagen|0.611094
+Rome|0.568541
+Vienna|0.603365
+Helsinki|0.459879
+Paris|0.613363

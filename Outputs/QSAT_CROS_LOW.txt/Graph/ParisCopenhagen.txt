@@ -2,12 +2,18 @@ digraph G{
 layout=dot
 graph [ dpi = 300 ];
 rankdir=LR;
-Paris -> SAT_1 [label =  "[8840 , 9146]  124475"];
-SAT_1 -> Copenhagen [label =  "[8840 , 9146]  102687"];
-Paris -> SAT_4 [label =  "[6640 , 6857]  67786.7"];
-SAT_4 -> Copenhagen [label =  "[6640 , 6857]  57024"];
-Paris -> SAT_3 [label =  "[7370 , 7627]  89616.4"];
-SAT_3 -> Copenhagen [label =  "[7370 , 7627]  72697.8"];
-Paris -> SAT_2 [label =  "[8103 , 8389]  109249"];
-SAT_2 -> Copenhagen [label =  "[8103 , 8389]  87922.6"];
+Paris -> SAT_1 [label =  "[8840 , 9146]  4394.27"];
+SAT_1 -> Copenhagen [label =  "[8840 , 9146]  91729.8"];
+Paris -> SAT_2 [label =  "[8103 , 8449]  4491.9"];
+SAT_2 -> SAT_5 [label =  "[8103 , 8449]  12142.6"];
+SAT_5 -> SAT_1 [label =  "[8118 , 9100]  180130"];
+SAT_1 -> Copenhagen [label =  "[8678 , 9146]  130179"];
+Paris -> SAT_3 [label =  "[7370 , 7858]  4367.06"];
+SAT_3 -> SAT_12 [label =  "[8084 , 9394]  54434"];
+SAT_12 -> SAT_2 [label =  "[8084 , 8389]  11586.5"];
+SAT_2 -> Copenhagen [label =  "[8084 , 8389]  80927.4"];
+Paris -> SAT_4 [label =  "[6640 , 6872]  1652.1"];
+SAT_4 -> SAT_7 [label =  "[6640 , 6872]  7995.93"];
+SAT_7 -> SAT_3 [label =  "[6640 , 7525]  176751"];
+SAT_3 -> Copenhagen [label =  "[7230 , 7627]  88270.5"];
 }

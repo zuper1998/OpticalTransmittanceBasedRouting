@@ -7,7 +7,11 @@ using std::endl; using std::string;
 using std::filesystem::directory_iterator;
 
 int main() {
+
     std::string path = R"(../InputData)";
+    if(constants::isTest){
+        path = R"(../TestInputData)";
+    }
 
     for (const auto &file: directory_iterator(path)) {
         cout << file.path() << endl;

@@ -35,6 +35,9 @@ void Network::generateBest(const std::filesystem::directory_entry& f) {
 
     //this is where the stuff starts
     for(int i = 0; i<endNodes.size();i++) {
+        if(constants::isTest){
+            if(endNodes.at(i).name.find("Star")==std::string::npos) continue;
+        }
         GeneratPathFrom(endNodes,i,f);
     }
     auto end = std::chrono::system_clock::now();
@@ -74,7 +77,10 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index, c
     std::stringstream outputGeoData;
 
     outputGeoData << R"(..\Outputs\)" << Utility::get_stem(f) << R"(\GeoData\)";
+    std::filesystem::create_directories(outputGeoData.str());
+
     outputGeoData << startN.name + ".txt";
+
     std::ofstream outGeoData(outputGeoData.str(), std::ios_base::out);
 
 
@@ -110,7 +116,7 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index, c
         outGraph << "}" << std::endl;
         printf("For the path between %s and %s avarage bitrate was %f sent bits: %f\n", startN.name.c_str(),
                endN.name.c_str(), sum / (3600 * 4), sum);
-        outGeoData <<  startN.name.c_str()  << "|" <<  endN.name.c_str() << "|" <<sum / (3600 * 4)<<std::endl;
+        outGeoData <<  endN.name.c_str() << "|" <<sum / (3600 * 4)<<std::endl;
 
     }
 }

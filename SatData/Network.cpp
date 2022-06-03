@@ -76,7 +76,7 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index, c
 
     std::stringstream outputGeoData;
 
-    outputGeoData << R"(..\Outputs\)" << Utility::get_stem(f) << R"(\GeoData\)";
+    outputGeoData << R"(../Outputs/)" << Utility::get_stem(f) << R"(/GeoData/)";
     std::filesystem::create_directories(outputGeoData.str());
 
     outputGeoData << startN.name + ".txt";
@@ -90,8 +90,8 @@ void Network::GeneratPathFrom(std::vector<SatelliteNode> &endNodes, int index, c
         std::stringstream outputFileGraph;
         std::stringstream outputFileData;
 
-        outputFileGraph << R"(..\Outputs\)" << Utility::get_stem(f)  <<  R"(\Graph\)";
-        outputFileData  << R"(..\Outputs\)" << Utility::get_stem(f)  <<  R"(\Data\)";
+        outputFileGraph << R"(../Outputs/)" << Utility::get_stem(f)  <<  R"(/Graph/)";
+        outputFileData  << R"(../Outputs/)" << Utility::get_stem(f)  <<  R"(/Data/)";
 
         std::filesystem::create_directories(outputFileData.str());
         std::filesystem::create_directories(outputFileGraph.str());

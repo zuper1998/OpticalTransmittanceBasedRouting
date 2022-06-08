@@ -1,0 +1,31 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Vienna -> SAT_1 [label =  "[8855 , 9107]  667.55"];
+SAT_1 -> SAT_30 [label =  "[8855 , 9215]  12412.2"];
+SAT_30 -> SAT_8 [label =  "[9235 , 9610]  12935.9"];
+SAT_8 -> Budapest [label =  "[9615 , 9802]  30793.6"];
+Vienna -> SAT_7 [label =  "[10271 , 10598]  1506.2"];
+SAT_7 -> Budapest [label =  "[10305 , 10598]  53904.4"];
+Vienna -> SAT_8 [label =  "[9557 , 9890]  1124.66"];
+SAT_8 -> SAT_29 [label =  "[9631 , 10002]  12734.6"];
+SAT_29 -> SAT_7 [label =  "[10023 , 10397]  12909.3"];
+SAT_7 -> Budapest [label =  "[10305 , 10598]  53904.4"];
+Vienna -> SAT_25 [label =  "[0 , 274]  2905.02"];
+SAT_25 -> Budapest [label =  "[0 , 299]  94784.3"];
+Vienna -> SAT_26 [label =  "[5650 , 5834]  415.73"];
+SAT_26 -> Budapest [label =  "[5650 , 5944]  56068.7"];
+Vienna -> SAT_27 [label =  "[4741 , 5094]  1127.36"];
+SAT_27 -> Budapest [label =  "[4741 , 5167]  94144.8"];
+Vienna -> SAT_28 [label =  "[3871 , 4318]  2040.72"];
+SAT_28 -> Budapest [label =  "[3877 , 4376]  128901"];
+Vienna -> SAT_29 [label =  "[3019 , 3526]  3330.51"];
+SAT_29 -> Budapest [label =  "[3035 , 3575]  163044"];
+Vienna -> SAT_30 [label =  "[2179 , 2724]  5027.65"];
+SAT_30 -> Budapest [label =  "[2204 , 2766]  192165"];
+Vienna -> SAT_31 [label =  "[1350 , 1915]  6680.1"];
+SAT_31 -> Budapest [label =  "[1381 , 1951]  205007"];
+Vienna -> SAT_32 [label =  "[530 , 1098]  7165.74"];
+SAT_32 -> Budapest [label =  "[568 , 1129]  192856"];
+}

@@ -16,7 +16,7 @@ std::vector<Path> OpticalTransmittanceOptimizer::BFS(SatelliteNode const &start,
     std::random_device rd;
     std::default_random_engine rng(rd());
     std::stringstream dataFileName;
-    dataFileName << R"(..\Outputs\)" << Utility::get_stem(f) << R"(\genData\)";
+    dataFileName << R"(../Outputs/)" << Utility::get_stem(f) << R"(/genData/)";
     std::filesystem::create_directories(dataFileName.str());
 
     dataFileName << start.name.c_str() << ".txt";

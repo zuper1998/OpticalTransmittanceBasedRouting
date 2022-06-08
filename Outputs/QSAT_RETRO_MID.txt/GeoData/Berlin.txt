@@ -1,0 +1,6 @@
+Copenhagen|5.4765
+Rome|5.48122
+Budapest|5.48108
+Vienna|5.48108
+Helsinki|5.48004
+Paris|5.02376

@@ -1,0 +1,6 @@
+Copenhagen|3.19436
+Rome|3.19436
+Vienna|3.19436
+Berlin|3.19436
+Budapest|3.19436
+Paris|2.28197

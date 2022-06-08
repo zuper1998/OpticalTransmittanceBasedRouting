@@ -1,0 +1,15 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Start  -> SAT_12 [label =  "[3359 , 3486]  273.371"];
+SAT_12 -> SAT_7 [label =  "[4017 , 4469]  17214.4"];
+SAT_7 -> Test_-50_15  [label =  "[4550 , 5064]  140558"];
+Start  -> SAT_13 [label =  "[5699 , 5939]  643.415"];
+SAT_13 -> SAT_9 [label =  "[5699 , 5939]  8441.84"];
+SAT_9 -> SAT_6 [label =  "[5699 , 5856]  6699.46"];
+SAT_6 -> Test_-50_15  [label =  "[5699 , 5856]  32800.4"];
+Start  -> SAT_16 [label =  "[9642 , 10210]  7190"];
+SAT_16 -> SAT_11 [label =  "[9859 , 10312]  17241"];
+SAT_11 -> Test_-50_15  [label =  "[10314 , 10721]  91030.9"];
+}

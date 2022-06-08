@@ -1,0 +1,6 @@
+Copenhagen|4.30705
+Rome|4.54156
+Vienna|4.54156
+Berlin|4.54156
+Budapest|4.54156
+Paris|4.54156

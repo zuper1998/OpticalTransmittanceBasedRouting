@@ -1,0 +1,6 @@
+Rome|1.98291
+Vienna|1.98291
+Helsinki|1.98291
+Berlin|1.98291
+Budapest|1.97318
+Paris|1.60553

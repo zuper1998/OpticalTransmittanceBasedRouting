@@ -1,0 +1,28 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Paris -> SAT_1 [label =  "[3109 , 3238]  278.785"];
+SAT_1 -> SAT_16 [label =  "[3181 , 3856]  46173.7"];
+SAT_16 -> Budapest [label =  "[3877 , 4376]  128901"];
+Paris -> SAT_3 [label =  "[7370 , 7858]  4367.06"];
+SAT_3 -> SAT_25 [label =  "[7370 , 7756]  17697.2"];
+SAT_25 -> Budapest [label =  "[7576 , 7756]  29291.9"];
+Paris -> SAT_4 [label =  "[6640 , 7083]  3272.81"];
+SAT_4 -> SAT_26 [label =  "[6640 , 7030]  16094.5"];
+SAT_26 -> Budapest [label =  "[6832 , 7030]  32735"];
+Paris -> SAT_17 [label =  "[5927 , 6422]  4840.59"];
+SAT_17 -> Budapest [label =  "[6128 , 6544]  97183.3"];
+Paris -> SAT_18 [label =  "[5196 , 5672]  3779.24"];
+SAT_18 -> Budapest [label =  "[5369 , 5818]  116891"];
+Paris -> SAT_19 [label =  "[4469 , 4919]  2837.38"];
+SAT_19 -> Budapest [label =  "[4613 , 5089]  136864"];
+Paris -> SAT_20 [label =  "[3746 , 4161]  2067.88"];
+SAT_20 -> Budapest [label =  "[3861 , 4355]  155310"];
+Paris -> SAT_31 [label =  "[1175 , 1513]  1043.24"];
+SAT_31 -> SAT_20 [label =  "[2469 , 2993]  22430.5"];
+SAT_20 -> Budapest [label =  "[3861 , 4355]  155310"];
+Paris -> SAT_32 [label =  "[303 , 748]  2060.49"];
+SAT_32 -> SAT_27 [label =  "[303 , 515]  21448.1"];
+SAT_27 -> Budapest [label =  "[303 , 515]  51392.5"];
+}

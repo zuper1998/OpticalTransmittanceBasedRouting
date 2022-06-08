@@ -1,0 +1,6 @@
+Copenhagen|6.06331
+Rome|6.06331
+Berlin|6.06331
+Budapest|6.06331
+Vienna|6.06331
+Helsinki|6.06331

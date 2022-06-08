@@ -13,9 +13,9 @@ SAT_2 -> Berlin [label =  "[8017 , 8396]  80716.8"];
 Helsinki -> SAT_13 [label =  "[0 , 273]  4297.08"];
 SAT_13 -> Berlin [label =  "[0 , 273]  94093.7"];
 Helsinki -> SAT_15 [label =  "[5092 , 5272]  401.543"];
-SAT_15 -> SAT_4 [label =  "[5620 , 6140]  22327.2"];
-SAT_4 -> Berlin [label =  "[6613 , 6834]  37574.6"];
+SAT_15 -> SAT_3 [label =  "[5934 , 6613]  48120.9"];
+SAT_3 -> Berlin [label =  "[7307 , 7622]  59956.4"];
 Helsinki -> SAT_16 [label =  "[4186 , 4521]  999.727"];
-SAT_16 -> SAT_4 [label =  "[5147 , 5826]  48120.3"];
-SAT_4 -> Berlin [label =  "[6613 , 6834]  37574.6"];
+SAT_16 -> SAT_3 [label =  "[5494 , 6267]  174170"];
+SAT_3 -> Berlin [label =  "[7307 , 7622]  59956.4"];
 }

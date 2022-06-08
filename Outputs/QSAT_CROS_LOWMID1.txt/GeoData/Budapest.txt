@@ -1,0 +1,6 @@
+Copenhagen|2.51434
+Rome|2.51434
+Vienna|2.51434
+Helsinki|2.51434
+Berlin|2.51434
+Paris|2.51434

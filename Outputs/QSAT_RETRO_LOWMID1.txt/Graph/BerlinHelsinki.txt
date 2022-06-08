@@ -1,0 +1,37 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Berlin -> SAT_1 [label =  "[3013 , 3458]  2513.94"];
+SAT_1 -> Helsinki [label =  "[3054 , 3558]  157857"];
+Berlin -> SAT_1 [label =  "[9095 , 9441]  1191.95"];
+SAT_1 -> SAT_20 [label =  "[9165 , 9689]  32362.9"];
+SAT_20 -> Helsinki [label =  "[9174 , 9689]  171190"];
+Berlin -> SAT_2 [label =  "[2293 , 2675]  1532.94"];
+SAT_2 -> Helsinki [label =  "[2293 , 2811]  179852"];
+Berlin -> SAT_2 [label =  "[8300 , 8725]  2124.45"];
+SAT_2 -> SAT_5 [label =  "[8300 , 8616]  12634.6"];
+SAT_5 -> Helsinki [label =  "[8300 , 8616]  64408.2"];
+Berlin -> SAT_3 [label =  "[1590 , 1877]  824.194"];
+SAT_3 -> Helsinki [label =  "[1590 , 2058]  178094"];
+Berlin -> SAT_3 [label =  "[7520 , 7995]  3420.68"];
+SAT_3 -> SAT_5 [label =  "[7812 , 8422]  32433.2"];
+SAT_5 -> Helsinki [label =  "[8228 , 8616]  76730.6"];
+Berlin -> SAT_4 [label =  "[6750 , 7256]  5023.22"];
+SAT_4 -> SAT_5 [label =  "[7355 , 8092]  80292.5"];
+SAT_5 -> Helsinki [label =  "[8228 , 8616]  76730.6"];
+Berlin -> SAT_13 [label =  "[0 , 273]  3147"];
+SAT_13 -> Helsinki [label =  "[0 , 522]  193347"];
+Berlin -> SAT_16 [label =  "[4012 , 4182]  376.584"];
+SAT_16 -> Helsinki [label =  "[4186 , 4521]  61530.9"];
+Berlin -> SAT_17 [label =  "[5798 , 5971]  395.33"];
+SAT_17 -> SAT_4 [label =  "[6017 , 6736]  40629"];
+SAT_4 -> SAT_6 [label =  "[7025 , 7634]  32409.8"];
+SAT_6 -> Helsinki [label =  "[7457 , 7733]  47562.9"];
+Berlin -> SAT_19 [label =  "[10152 , 10450]  4281.73"];
+SAT_19 -> Helsinki [label =  "[10152 , 10450]  114119"];
+Berlin -> SAT_20 [label =  "[9398 , 9877]  6133.78"];
+SAT_20 -> SAT_24 [label =  "[9506 , 9877]  12754.4"];
+SAT_24 -> SAT_19 [label =  "[9859 , 10312]  17241"];
+SAT_19 -> Helsinki [label =  "[9925 , 10450]  186998"];
+}

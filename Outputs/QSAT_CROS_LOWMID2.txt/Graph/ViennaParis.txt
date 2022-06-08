@@ -1,0 +1,33 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Vienna -> SAT_1 [label =  "[8855 , 9107]  667.55"];
+SAT_1 -> Paris [label =  "[8855 , 9352]  179204"];
+Vienna -> SAT_8 [label =  "[9557 , 9890]  1124.66"];
+SAT_8 -> Paris [label =  "[9580 , 10095]  185685"];
+Vienna -> SAT_25 [label =  "[0 , 274]  2905.02"];
+SAT_25 -> SAT_1 [label =  "[1209 , 1891]  48197.9"];
+SAT_1 -> Paris [label =  "[3109 , 3238]  20462.1"];
+Vienna -> SAT_26 [label =  "[5650 , 5834]  415.73"];
+SAT_26 -> SAT_2 [label =  "[6721 , 7401]  48146.1"];
+SAT_2 -> Paris [label =  "[8103 , 8607]  168792"];
+Vienna -> SAT_27 [label =  "[4741 , 5094]  1127.36"];
+SAT_27 -> SAT_5 [label =  "[5301 , 5672]  12828.6"];
+SAT_5 -> Paris [label =  "[5916 , 6349]  107329"];
+Vienna -> SAT_28 [label =  "[3871 , 4318]  2040.72"];
+SAT_28 -> SAT_4 [label =  "[5147 , 5826]  48120.3"];
+SAT_4 -> Paris [label =  "[6640 , 7105]  128862"];
+Vienna -> SAT_29 [label =  "[3019 , 3526]  3330.51"];
+SAT_29 -> SAT_7 [label =  "[3725 , 4099]  12909.2"];
+SAT_7 -> Paris [label =  "[4484 , 4821]  66532.4"];
+Vienna -> SAT_30 [label =  "[2179 , 2724]  5027.65"];
+SAT_30 -> SAT_8 [label =  "[2937 , 3312]  12935.9"];
+SAT_8 -> Paris [label =  "[3782 , 4043]  46126.2"];
+Vienna -> SAT_31 [label =  "[1350 , 1915]  6680.1"];
+SAT_31 -> SAT_7 [label =  "[2784 , 3466]  48192.6"];
+SAT_7 -> Paris [label =  "[4484 , 4821]  66532.4"];
+Vienna -> SAT_32 [label =  "[530 , 1098]  7165.74"];
+SAT_32 -> SAT_8 [label =  "[1996 , 2679]  48222"];
+SAT_8 -> Paris [label =  "[3782 , 4043]  46126.2"];
+}

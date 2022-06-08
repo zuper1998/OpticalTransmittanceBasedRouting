@@ -13,9 +13,9 @@ SAT_2 -> Copenhagen [label =  "[7951 , 8389]  109090"];
 Helsinki -> SAT_13 [label =  "[0 , 279]  4445.12"];
 SAT_13 -> Copenhagen [label =  "[0 , 279]  87466.3"];
 Helsinki -> SAT_15 [label =  "[5092 , 5272]  401.543"];
-SAT_15 -> SAT_4 [label =  "[5620 , 6140]  22327.2"];
-SAT_4 -> Copenhagen [label =  "[6517 , 6857]  67519.8"];
+SAT_15 -> SAT_3 [label =  "[5934 , 6613]  48120.9"];
+SAT_3 -> Copenhagen [label =  "[7230 , 7627]  88270.5"];
 Helsinki -> SAT_16 [label =  "[4186 , 4521]  999.727"];
-SAT_16 -> SAT_4 [label =  "[5147 , 5826]  48120.3"];
-SAT_4 -> Copenhagen [label =  "[6517 , 6857]  67519.8"];
+SAT_16 -> SAT_3 [label =  "[5494 , 6267]  174170"];
+SAT_3 -> Copenhagen [label =  "[7230 , 7627]  88270.5"];
 }

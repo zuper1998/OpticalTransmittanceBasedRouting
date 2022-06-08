@@ -1,0 +1,6 @@
+Copenhagen|4.72455
+Rome|4.72455
+Berlin|4.72455
+Budapest|4.72455
+Vienna|4.72455
+Helsinki|4.72455

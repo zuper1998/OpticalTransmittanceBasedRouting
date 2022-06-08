@@ -1,0 +1,30 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Vienna -> SAT_1 [label =  "[3111 , 3529]  2008.8"];
+SAT_1 -> Helsinki [label =  "[3111 , 3558]  147548"];
+Vienna -> SAT_2 [label =  "[2396 , 2742]  1197.25"];
+SAT_2 -> Helsinki [label =  "[2396 , 2811]  157751"];
+Vienna -> SAT_2 [label =  "[8365 , 8737]  2603.97"];
+SAT_2 -> SAT_5 [label =  "[8365 , 8616]  10481"];
+SAT_5 -> Helsinki [label =  "[8365 , 8616]  51124.5"];
+Vienna -> SAT_3 [label =  "[1702 , 1935]  586.624"];
+SAT_3 -> Helsinki [label =  "[1702 , 2058]  143281"];
+Vienna -> SAT_3 [label =  "[7591 , 8088]  4383.83"];
+SAT_3 -> SAT_5 [label =  "[7812 , 8422]  32433.2"];
+SAT_5 -> Helsinki [label =  "[8228 , 8616]  76730.6"];
+Vienna -> SAT_4 [label =  "[6826 , 7343]  5914.21"];
+SAT_4 -> SAT_6 [label =  "[7025 , 7634]  32409.8"];
+SAT_6 -> Helsinki [label =  "[7457 , 7733]  47562.9"];
+Vienna -> SAT_13 [label =  "[0 , 274]  2905.02"];
+SAT_13 -> Helsinki [label =  "[0 , 522]  193347"];
+Vienna -> SAT_14 [label =  "[5650 , 5834]  415.73"];
+SAT_14 -> SAT_12 [label =  "[7025 , 7634]  32409.8"];
+SAT_12 -> SAT_5 [label =  "[7810 , 8548]  80318.1"];
+SAT_5 -> Helsinki [label =  "[8228 , 8616]  76730.6"];
+Vienna -> SAT_15 [label =  "[4741 , 5094]  1127.36"];
+SAT_15 -> Helsinki [label =  "[5092 , 5272]  28894"];
+Vienna -> SAT_16 [label =  "[3871 , 4318]  2040.72"];
+SAT_16 -> Helsinki [label =  "[4186 , 4521]  61530.9"];
+}

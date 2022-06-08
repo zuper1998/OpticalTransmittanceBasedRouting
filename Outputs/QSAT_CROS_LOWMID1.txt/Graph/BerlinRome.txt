@@ -1,0 +1,34 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Berlin -> SAT_1 [label =  "[8736 , 9161]  2210.17"];
+SAT_1 -> Rome [label =  "[8981 , 9227]  42720"];
+Berlin -> SAT_2 [label =  "[8017 , 8396]  1542.75"];
+SAT_2 -> SAT_23 [label =  "[8973 , 9497]  22430.5"];
+SAT_23 -> SAT_20 [label =  "[9557 , 10023]  15992"];
+SAT_20 -> Rome [label =  "[9859 , 10274]  96793.9"];
+Berlin -> SAT_3 [label =  "[7307 , 7622]  1004.27"];
+SAT_3 -> SAT_6 [label =  "[7307 , 7660]  12399.4"];
+SAT_6 -> SAT_1 [label =  "[7786 , 8645]  58460.6"];
+SAT_1 -> Rome [label =  "[8981 , 9227]  42720"];
+Berlin -> SAT_4 [label =  "[6613 , 6834]  551.643"];
+SAT_4 -> SAT_13 [label =  "[6613 , 6851]  8352.21"];
+SAT_13 -> SAT_1 [label =  "[7507 , 8189]  48197.9"];
+SAT_1 -> Rome [label =  "[8981 , 9227]  42720"];
+Berlin -> SAT_13 [label =  "[0 , 273]  3147"];
+SAT_13 -> SAT_25 [label =  "[628 , 1309]  48173.5"];
+SAT_25 -> Rome [label =  "[1825 , 1963]  21919.6"];
+Berlin -> SAT_16 [label =  "[4012 , 4182]  376.584"];
+SAT_16 -> Rome [label =  "[4012 , 4226]  53769.6"];
+Berlin -> SAT_17 [label =  "[48 , 528]  3989.58"];
+SAT_17 -> Rome [label =  "[250 , 624]  79058.4"];
+Berlin -> SAT_17 [label =  "[5988 , 6448]  3139.09"];
+SAT_17 -> Rome [label =  "[6101 , 6614]  184404"];
+Berlin -> SAT_18 [label =  "[5235 , 5718]  4127.64"];
+SAT_18 -> Rome [label =  "[5360 , 5873]  185049"];
+Berlin -> SAT_19 [label =  "[4485 , 4985]  5165.59"];
+SAT_19 -> Rome [label =  "[4621 , 5130]  177333"];
+Berlin -> SAT_20 [label =  "[3738 , 4248]  6039.82"];
+SAT_20 -> Rome [label =  "[3885 , 4385]  163494"];
+}

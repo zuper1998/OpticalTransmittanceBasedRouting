@@ -1,0 +1,34 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Rome -> SAT_1 [label =  "[8981 , 9227]  645.116"];
+SAT_1 -> SAT_29 [label =  "[9165 , 9681]  21743"];
+SAT_29 -> SAT_8 [label =  "[9631 , 9890]  9093.09"];
+SAT_8 -> Vienna [label =  "[9631 , 9890]  52098.5"];
+Rome -> SAT_7 [label =  "[10393 , 10661]  1250.39"];
+SAT_7 -> Vienna [label =  "[10393 , 10661]  61209.5"];
+Rome -> SAT_8 [label =  "[9680 , 10011]  1108.34"];
+SAT_8 -> SAT_28 [label =  "[9953 , 10468]  21717.2"];
+SAT_28 -> SAT_7 [label =  "[10419 , 10661]  8486.35"];
+SAT_7 -> Vienna [label =  "[10419 , 10661]  54823.8"];
+Rome -> SAT_25 [label =  "[0 , 137]  578.169"];
+SAT_25 -> Vienna [label =  "[0 , 274]  90987.1"];
+Rome -> SAT_25 [label =  "[6350 , 6523]  385.604"];
+SAT_25 -> SAT_1 [label =  "[7507 , 8189]  48197.9"];
+SAT_1 -> Vienna [label =  "[8855 , 9107]  43965.2"];
+Rome -> SAT_26 [label =  "[5437 , 5790]  1131.53"];
+SAT_26 -> Vienna [label =  "[5650 , 5834]  29785.9"];
+Rome -> SAT_27 [label =  "[4567 , 5016]  2092.84"];
+SAT_27 -> Vienna [label =  "[4741 , 5094]  67099.7"];
+Rome -> SAT_28 [label =  "[3715 , 4226]  3468.48"];
+SAT_28 -> Vienna [label =  "[3871 , 4318]  100222"];
+Rome -> SAT_29 [label =  "[2877 , 3425]  5253.26"];
+SAT_29 -> Vienna [label =  "[3019 , 3526]  134610"];
+Rome -> SAT_30 [label =  "[2048 , 2615]  6860"];
+SAT_30 -> Vienna [label =  "[2179 , 2724]  169491"];
+Rome -> SAT_31 [label =  "[1230 , 1797]  7056.32"];
+SAT_31 -> Vienna [label =  "[1350 , 1915]  197200"];
+Rome -> SAT_32 [label =  "[421 , 971]  5612.05"];
+SAT_32 -> Vienna [label =  "[530 , 1098]  204483"];
+}

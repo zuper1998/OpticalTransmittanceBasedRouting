@@ -1,0 +1,33 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Helsinki -> SAT_6 [label =  "[7457 , 7733]  717.96"];
+SAT_6 -> SAT_25 [label =  "[7457 , 7756]  81944.8"];
+SAT_25 -> Budapest [label =  "[7576 , 7756]  29291.9"];
+Helsinki -> SAT_13 [label =  "[0 , 522]  6831.65"];
+SAT_13 -> SAT_27 [label =  "[0 , 515]  145548"];
+SAT_27 -> Budapest [label =  "[85 , 515]  104631"];
+Helsinki -> SAT_15 [label =  "[5092 , 5272]  401.543"];
+SAT_15 -> SAT_25 [label =  "[6294 , 6665]  12828.6"];
+SAT_25 -> Budapest [label =  "[7576 , 7756]  29291.9"];
+Helsinki -> SAT_16 [label =  "[4186 , 4521]  999.727"];
+SAT_16 -> SAT_19 [label =  "[4306 , 4770]  15939.4"];
+SAT_19 -> Budapest [label =  "[4613 , 5089]  136864"];
+Helsinki -> SAT_17 [label =  "[48 , 493]  2674.71"];
+SAT_17 -> Budapest [label =  "[146 , 653]  174081"];
+Helsinki -> SAT_25 [label =  "[1337 , 1793]  2946.23"];
+SAT_25 -> Budapest [label =  "[1584 , 1968]  82470.4"];
+Helsinki -> SAT_25 [label =  "[7258 , 7683]  2224.53"];
+SAT_25 -> Budapest [label =  "[7576 , 7756]  29291.9"];
+Helsinki -> SAT_26 [label =  "[594 , 1058]  3245.08"];
+SAT_26 -> Budapest [label =  "[834 , 1242]  93035.9"];
+Helsinki -> SAT_26 [label =  "[6522 , 6944]  2176.53"];
+SAT_26 -> Budapest [label =  "[6832 , 7030]  32735"];
+Helsinki -> SAT_27 [label =  "[0 , 324]  2865.64"];
+SAT_27 -> Budapest [label =  "[85 , 515]  104631"];
+Helsinki -> SAT_27 [label =  "[5784 , 6206]  2167.69"];
+SAT_27 -> Budapest [label =  "[6085 , 6306]  37321.2"];
+Helsinki -> SAT_28 [label =  "[5046 , 5469]  2193.78"];
+SAT_28 -> Budapest [label =  "[5336 , 5584]  42985.9"];
+}

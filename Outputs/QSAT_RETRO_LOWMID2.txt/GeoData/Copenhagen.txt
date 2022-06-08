@@ -1,0 +1,6 @@
+Rome|3.33825
+Vienna|3.33825
+Helsinki|3.33825
+Berlin|3.33825
+Budapest|3.33825
+Paris|3.33825

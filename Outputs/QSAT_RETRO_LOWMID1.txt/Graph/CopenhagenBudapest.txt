@@ -1,0 +1,35 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+Copenhagen -> SAT_1 [label =  "[2953 , 3429]  3465"];
+SAT_1 -> Budapest [label =  "[3136 , 3584]  112123"];
+Copenhagen -> SAT_1 [label =  "[9102 , 9348]  638.043"];
+SAT_1 -> Budapest [label =  "[9209 , 9580]  76218.2"];
+Copenhagen -> SAT_2 [label =  "[2224 , 2654]  2217.38"];
+SAT_2 -> Budapest [label =  "[2413 , 2805]  84478.1"];
+Copenhagen -> SAT_2 [label =  "[8286 , 8654]  1379.1"];
+SAT_2 -> Budapest [label =  "[8419 , 8858]  106804"];
+Copenhagen -> SAT_3 [label =  "[1508 , 1867]  1313.19"];
+SAT_3 -> Budapest [label =  "[1703 , 2015]  58149.3"];
+Copenhagen -> SAT_3 [label =  "[7496 , 7934]  2387.57"];
+SAT_3 -> Budapest [label =  "[7641 , 8125]  138485"];
+Copenhagen -> SAT_4 [label =  "[813 , 1062]  650.897"];
+SAT_4 -> Budapest [label =  "[1022 , 1198]  28543"];
+Copenhagen -> SAT_4 [label =  "[6718 , 7202]  3779.77"];
+SAT_4 -> Budapest [label =  "[6872 , 7382]  167664"];
+Copenhagen -> SAT_13 [label =  "[0 , 279]  2600.62"];
+SAT_13 -> Budapest [label =  "[0 , 299]  94784.3"];
+Copenhagen -> SAT_17 [label =  "[5692 , 6039]  1208.64"];
+SAT_17 -> SAT_14 [label =  "[5692 , 5944]  10558.6"];
+SAT_14 -> Budapest [label =  "[5692 , 5944]  48312.1"];
+Copenhagen -> SAT_18 [label =  "[5007 , 5214]  498.883"];
+SAT_18 -> SAT_14 [label =  "[5240 , 5607]  12646.3"];
+SAT_14 -> Budapest [label =  "[5602 , 5944]  63999.3"];
+Copenhagen -> SAT_19 [label =  "[10137 , 10627]  5277.73"];
+SAT_19 -> Budapest [label =  "[10149 , 10627]  133116"];
+Copenhagen -> SAT_20 [label =  "[9377 , 9900]  6497.32"];
+SAT_20 -> SAT_23 [label =  "[9859 , 10312]  17241"];
+SAT_23 -> SAT_19 [label =  "[10294 , 10627]  11612.1"];
+SAT_19 -> Budapest [label =  "[10294 , 10627]  100483"];
+}

@@ -1,6 +1,6 @@
-Copenhagen|5.21813
-Rome|5.21813
-Berlin|5.21813
-Budapest|5.41423
-Vienna|5.21813
-Paris|5.1329
+Copenhagen|10.8303
+Rome|10.4152
+Berlin|10.8417
+Budapest|10.8651
+Vienna|10.8651
+Paris|10.8303

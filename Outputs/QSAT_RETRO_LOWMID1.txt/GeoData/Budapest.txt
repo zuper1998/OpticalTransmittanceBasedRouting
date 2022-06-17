@@ -1,6 +1,6 @@
-Copenhagen|2.31377
-Rome|2.31377
-Vienna|2.31377
-Helsinki|2.2449
-Berlin|2.31377
-Paris|2.00629
+Copenhagen|4.24407
+Rome|4.24289
+Vienna|4.24407
+Helsinki|4.24407
+Berlin|4.24407
+Paris|4.24407

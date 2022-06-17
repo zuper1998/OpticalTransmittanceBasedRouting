@@ -1,6 +1,6 @@
-Copenhagen|2.25147
-Rome|2.25147
-Vienna|2.25147
-Berlin|2.25147
-Budapest|2.25147
-Paris|2.16623
+Copenhagen|6.16098
+Rome|6.19245
+Vienna|6.16098
+Berlin|6.16098
+Budapest|6.16098
+Paris|6.16098

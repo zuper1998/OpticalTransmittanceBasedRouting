@@ -1,6 +1,6 @@
-Copenhagen|5.35475
-Berlin|5.36683
-Budapest|5.34523
-Vienna|5.36461
-Helsinki|5.21647
-Paris|5.16533
+Copenhagen|6.45578
+Berlin|6.42852
+Budapest|6.42852
+Vienna|6.42852
+Helsinki|6.42852
+Paris|6.42852

@@ -1,6 +1,6 @@
-Copenhagen|6.03423
-Rome|6.03423
-Berlin|6.03423
-Budapest|6.03423
-Vienna|6.03423
-Paris|6.03198
+Copenhagen|7.24376
+Rome|7.24376
+Berlin|7.24376
+Budapest|7.24376
+Vienna|7.24376
+Paris|7.24376

@@ -2,7 +2,4 @@ digraph G{
 layout=dot
 graph [ dpi = 300 ];
 rankdir=LR;
-Start  -> SAT_12 [label =  "[3359 , 3486]  273.371"];
-SAT_12 -> SAT_15 [label =  "[6711 , 6827]  3996.44"];
-SAT_15 -> Test_0_135  [label =  "[6720 , 6827]  16628.4"];
 }

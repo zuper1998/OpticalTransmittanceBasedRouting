@@ -1,6 +1,6 @@
-Rome|5.42097
-Berlin|5.42097
-Budapest|5.41124
-Vienna|5.41963
-Helsinki|5.42097
-Paris|5.04359
+Rome|8.17855
+Berlin|8.2271
+Budapest|8.2271
+Vienna|8.2271
+Helsinki|8.20898
+Paris|8.2271

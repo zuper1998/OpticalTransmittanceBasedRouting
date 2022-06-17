@@ -1,6 +1,6 @@
-Berlin|0.49683
-Budapest|0.450613
-Copenhagen|0.496971
-Rome|0.452489
-Helsinki|0.450613
-Paris|0.496971
+Berlin|2.78589
+Budapest|2.80867
+Copenhagen|2.78992
+Rome|2.79178
+Helsinki|2.67894
+Paris|2.78992

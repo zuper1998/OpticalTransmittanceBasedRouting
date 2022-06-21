@@ -1,6 +1,0 @@
-Copenhagen|7.29981
-Rome|7.29981
-Berlin|7.29981
-Budapest|7.29981
-Helsinki|7.29981
-Paris|7.29981

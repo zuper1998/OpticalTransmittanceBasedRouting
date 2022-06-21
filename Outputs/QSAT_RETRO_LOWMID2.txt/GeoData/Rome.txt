@@ -1,6 +1,0 @@
-Copenhagen|3.74841
-Vienna|3.74841
-Helsinki|3.74841
-Berlin|3.74841
-Budapest|3.74841
-Paris|3.74841

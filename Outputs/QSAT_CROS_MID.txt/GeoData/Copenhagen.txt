@@ -1,6 +1,0 @@
-Rome|8.17855
-Berlin|8.2271
-Budapest|8.2271
-Vienna|8.2271
-Helsinki|8.20898
-Paris|8.2271

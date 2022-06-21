@@ -1,6 +1,0 @@
-Copenhagen|3.0014
-Vienna|3.0014
-Helsinki|3.0014
-Berlin|3.0014
-Budapest|3.0014
-Paris|3.0014

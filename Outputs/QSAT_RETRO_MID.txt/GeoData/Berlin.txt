@@ -1,6 +1,0 @@
-Copenhagen|7.0957
-Rome|7.0957
-Budapest|7.0957
-Vienna|7.03629
-Helsinki|7.03778
-Paris|7.06609

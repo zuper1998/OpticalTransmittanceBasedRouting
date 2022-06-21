@@ -1,6 +1,0 @@
-Rome|6.10263
-Vienna|6.10263
-Helsinki|6.10263
-Berlin|6.10263
-Budapest|6.10263
-Paris|6.10263

@@ -1,6 +1,0 @@
-Berlin|1.27839
-Budapest|1.27839
-Copenhagen|2.01706
-Rome|2.0187
-Vienna|1.5827
-Paris|2.00014

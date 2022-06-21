@@ -1,6 +1,0 @@
-Rome|4.3301
-Vienna|4.37238
-Helsinki|4.41188
-Berlin|4.40498
-Budapest|4.33794
-Paris|4.41188

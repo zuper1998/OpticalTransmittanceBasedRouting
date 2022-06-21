@@ -1,6 +1,0 @@
-Copenhagen|6.16098
-Rome|6.19245
-Vienna|6.16098
-Berlin|6.16098
-Budapest|6.16098
-Paris|6.16098

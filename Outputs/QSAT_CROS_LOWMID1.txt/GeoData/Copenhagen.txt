@@ -1,6 +1,0 @@
-Rome|3.80097
-Vienna|3.80097
-Helsinki|3.80025
-Berlin|3.80097
-Budapest|3.80097
-Paris|3.80097

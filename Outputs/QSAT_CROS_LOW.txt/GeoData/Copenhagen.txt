@@ -1,6 +1,0 @@
-Berlin|3.0627
-Budapest|3.0627
-Rome|3.0627
-Vienna|3.0627
-Helsinki|3.0627
-Paris|3.10601

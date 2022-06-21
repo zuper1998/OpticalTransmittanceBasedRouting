@@ -1,6 +1,0 @@
-Rome|7.32096
-Berlin|7.30437
-Budapest|7.32096
-Vienna|7.15945
-Helsinki|7.18334
-Paris|7.32096

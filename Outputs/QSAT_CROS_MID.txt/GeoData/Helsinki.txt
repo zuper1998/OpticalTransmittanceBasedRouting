@@ -1,6 +1,0 @@
-Copenhagen|10.8303
-Rome|10.4152
-Berlin|10.8417
-Budapest|10.8651
-Vienna|10.8651
-Paris|10.8303

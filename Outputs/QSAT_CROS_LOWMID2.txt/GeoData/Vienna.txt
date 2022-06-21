@@ -1,6 +1,0 @@
-Copenhagen|5.08244
-Rome|5.10906
-Helsinki|5.10906
-Berlin|5.09368
-Budapest|5.10849
-Paris|5.08244

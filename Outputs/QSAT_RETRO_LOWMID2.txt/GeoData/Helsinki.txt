@@ -1,6 +1,0 @@
-Copenhagen|4.16804
-Rome|4.16804
-Vienna|4.16804
-Berlin|4.16804
-Budapest|4.16804
-Paris|4.16804

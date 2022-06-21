@@ -1,8 +1,0 @@
-digraph G{
-layout=dot
-graph [ dpi = 300 ];
-rankdir=LR;
-Start  -> SAT_24 [label =  "[188 , 373]  429.97"];
-SAT_24 -> SAT_30 [label =  "[727 , 1336]  32409.8"];
-SAT_30 -> Test_10_-45  [label =  "[1178 , 1340]  25742.1"];
-}

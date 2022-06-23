@@ -1,0 +1,5 @@
+digraph G{
+layout=dot
+graph [ dpi = 300 ];
+rankdir=LR;
+}

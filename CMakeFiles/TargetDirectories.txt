@@ -1,0 +1,3 @@
+/home/cloud/OpticalTransmittanceBasedRouting/CMakeFiles/OpticalTransmittanceBasedRouting.dir
+/home/cloud/OpticalTransmittanceBasedRouting/CMakeFiles/edit_cache.dir
+/home/cloud/OpticalTransmittanceBasedRouting/CMakeFiles/rebuild_cache.dir

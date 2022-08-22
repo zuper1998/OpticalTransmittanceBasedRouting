@@ -3,6 +3,6 @@ layout=dot
 graph [ dpi = 300 ];
 rankdir=LR;
 Start  -> SAT_24 [label =  "[188 , 373]  429.97"];
-SAT_24 -> SAT_29 [label =  "[1057 , 1794]  80292.5"];
-SAT_29 -> Test_-50_0  [label =  "[1791 , 2058]  45590.5"];
+SAT_24 -> SAT_31 [label =  "[413 , 515]  3455.2"];
+SAT_31 -> Test_-50_0  [label =  "[413 , 515]  18855.3"];
 }
